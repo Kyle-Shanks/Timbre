@@ -19,8 +19,10 @@ export const SPACING = {
     size24, size32, size40,
     size48, size64, size80,
 
-    containerPad1: size16,
-    containerPad2: size32,
+    containerPadL: size48,
+    containerPadM: size32,
+    containerPadS: size16,
+    containerPadXS: size8,
 
     headerMarginL: size64,
     headerMarginM: size48,
@@ -34,5 +36,7 @@ export const SPACING = {
     textMarginXXS: size4,
 
     borderWidth: size1,
-    borderRadius: size4,
+    borderRadiusL: size8,
+    borderRadiusM: size4,
+    borderRadiusS: size2,
 };

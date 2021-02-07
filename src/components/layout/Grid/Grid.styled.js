@@ -10,7 +10,7 @@ export const StyledComponent = styled(Container)`
             + (columns ? `grid-template-columns: ${columns};` : '')
             + (areas ? `grid-template-areas: ${areas};` : '');
     }}
-    gap: ${({ gap }) => (gap ? gap : '0') };
-    justify-content: ${({ justify }) => (justify ? justify : 'normal') };
-    align-content: ${({ align }) => (align ? align : 'normal') };
+    gap: ${({ gap }) => gap };
+    justify-content: ${({ justify }) => justify };
+    align-content: ${({ align }) => align };
 `;
