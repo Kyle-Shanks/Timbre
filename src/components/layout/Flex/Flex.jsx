@@ -13,18 +13,22 @@ const Flex = ({ className, children, ...styleProps }) => {
 };
 
 Flex.propTypes = {
-    align: PropTypes.string,
     children: PropTypes.node,
     className: PropTypes.string,
+
+    // Style Props
+    align: PropTypes.string,
     direction: PropTypes.string,
     justify: PropTypes.string,
     wrap: PropTypes.string,
 };
 
 Flex.defaultProps = {
-    align: 'normal',
     children: null,
     className: '',
+
+    // Style Props
+    align: 'normal',
     direction: 'row',
     justify: 'normal',
     wrap: 'wrap',

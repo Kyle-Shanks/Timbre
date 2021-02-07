@@ -16,12 +16,16 @@ const Container = ({ className, children, ...styleProps }) => {
 Container.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
+
+    // Style Props
     fullWidth: PropTypes.bool,
 };
 
 Container.defaultProps = {
     children: null,
     className: '',
+
+    // Style Props
     fullWidth: false,
 };
 

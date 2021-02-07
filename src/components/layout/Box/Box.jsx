@@ -19,17 +19,25 @@ const Box = ({ className, children, tag: Tag, ...styleProps }) => {
 Box.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
+    tag: PropTypes.elementType,
+
+    // Style Props
+    h: PropTypes.string,
+    w: PropTypes.string,
     margin: PropTypes.string,
     padding: PropTypes.string,
-    tag: PropTypes.elementType,
 };
 
 Box.defaultProps = {
     children: null,
     className: '',
+    tag: 'div',
+
+    // Style Props
+    h: '',
+    w: '',
     margin: '',
     padding: '',
-    tag: 'div',
 };
 
 export default Box;

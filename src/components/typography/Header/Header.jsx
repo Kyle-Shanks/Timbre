@@ -19,18 +19,22 @@ const Header = ({ children, className, ...styleProps }) => {
 };
 
 Header.propTypes = {
-    align: PropTypes.oneOf(ALIGN),
     children: PropTypes.node,
     className: PropTypes.string,
     tag: PropTypes.oneOf(TAG),
+
+    // Style Props
+    align: PropTypes.oneOf(ALIGN),
     truncate: PropTypes.bool,
 };
 
 Header.defaultProps = {
-    align: ALIGN[0],
     children: null,
     className: '',
     tag: TAG[0],
+
+    // Style Props
+    align: ALIGN[0],
     truncate: false,
 };
 

@@ -20,19 +20,21 @@ const Text = ({ children, className, ...styleProps }) => {
 };
 
 Text.propTypes = {
-    align: PropTypes.oneOf(ALIGN),
     children: PropTypes.node,
     className: PropTypes.string,
-    inline: PropTypes.bool,
+
+    // Style Props
+    align: PropTypes.oneOf(ALIGN),
     truncate: PropTypes.bool,
     variation: PropTypes.oneOf(VARIATION),
 };
 
 Text.defaultProps = {
-    align: ALIGN[0],
     children: null,
     className: '',
-    inline: false,
+
+    // Style Props
+    align: ALIGN[0],
     truncate: false,
     variation: VARIATION[0],
 };

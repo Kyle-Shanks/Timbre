@@ -16,28 +16,28 @@ Grid.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
 
-    template: PropTypes.string,
-    rows: PropTypes.string,
-    columns: PropTypes.string,
-    areas: PropTypes.string,
-
-    gap: PropTypes.string,
+    // Style Props
     align: PropTypes.string,
+    areas: PropTypes.string,
+    columns: PropTypes.string,
+    gap: PropTypes.string,
     justify: PropTypes.string,
+    rows: PropTypes.string,
+    template: PropTypes.string,
 };
 
 Grid.defaultProps = {
     children: null,
     className: '',
 
-    template: '',
-    rows: '',
-    columns: '',
-    areas: '',
-
-    gap: '0rem',
+    // Style Props
     align: 'normal',
+    areas: '',
+    columns: '',
+    gap: '0rem',
     justify: 'normal',
+    rows: '',
+    template: '',
 };
 
 export default Grid;

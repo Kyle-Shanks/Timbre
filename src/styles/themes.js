@@ -1,7 +1,7 @@
 import { colors, shades } from 'src/styles/palette';
 
 export const lightTheme = {
-    background: shades.white,
+    background: shades.grey5,
 
     primaryText: shades.grey70,
     secondaryText: shades.grey50,
@@ -14,7 +14,7 @@ export const lightTheme = {
 export const darkTheme = {
     background: shades.grey80,
 
-    primaryText: shades.grey20,
+    primaryText: shades.grey10,
     secondaryText: shades.grey40,
 
     success: colors.green,

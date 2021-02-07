@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Box from 'src/components/layout/Box';
-import { relaInline, ellipsisStyles } from 'src/styles/util';
+import { ellipsisStyles } from 'src/styles/util';
 import {
     FONT_SIZE,
     FONT_WEIGHT,
@@ -21,7 +21,6 @@ const variationStyles = {
 };
 
 export const StyledComponent = styled(Box)`
-    ${({ inline }) => inline && relaInline}
     color: ${({ theme, variation }) => variation === 'primary' ? theme.primaryText : theme.secondaryText};
     font-size: ${({ variation }) => variationStyles[variation].fontSize}rem;
     font-weight: ${({ variation }) => variationStyles[variation].fontWeight};

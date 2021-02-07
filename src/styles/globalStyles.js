@@ -60,9 +60,9 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        background: ${({ theme }) => theme.background};
+        background-color: ${({ theme }) => theme.background};
         color: ${({ theme }) => theme.primaryText};
         font-family: 'Rubik', sans-serif;
-        transition: 0s;
+        transition: 0s, background-color 0.2s cubic-bezier(0, 0.5, 0.2, 1);
     }
 `;
