@@ -2,11 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledComponent } from './Box.styled';
 
-const Box = ({ className, children, component: Component }) => {
+const Box = ({ className, children, tag: Tag, ...styleProps }) => {
     const BASE_CLASS_NAME = 'Box';
 
     return (
-        <StyledComponent as={Component} className={`${BASE_CLASS_NAME} ${className}`.trim()}>
+        <StyledComponent
+            className={`${BASE_CLASS_NAME} ${className}`.trim()}
+            as={Tag}
+            {...styleProps}
+        >
             {children}
         </StyledComponent>
     );
@@ -15,13 +19,17 @@ const Box = ({ className, children, component: Component }) => {
 Box.propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    component: PropTypes.elementType,
+    margin: PropTypes.string,
+    padding: PropTypes.string,
+    tag: PropTypes.elementType,
 };
 
 Box.defaultProps = {
     children: null,
     className: '',
-    component: 'div',
+    margin: '',
+    padding: '',
+    tag: 'div',
 };
 
 export default Box;

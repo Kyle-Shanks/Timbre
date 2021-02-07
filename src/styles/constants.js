@@ -13,8 +13,25 @@ const size64 = 4;     // 64px
 const size80 = 5;     // 80px
 
 export const SPACING = {
+    // For misc use
+    size0, size1, size2,
+    size4, size8, size16,
+    size24, size32, size40,
+    size48, size64, size80,
+
     containerPad1: size16,
     containerPad2: size32,
+
+    headerMarginL: size64,
+    headerMarginM: size48,
+    headerMarginS: size32,
+    headerMarginXS: size16,
+    headerMarginXXS: size4,
+    textMarginL: size48,
+    textMarginM: size32,
+    textMarginS: size16,
+    textMarginXS: size8,
+    textMarginXXS: size4,
 
     borderWidth: size1,
     borderRadius: size4,

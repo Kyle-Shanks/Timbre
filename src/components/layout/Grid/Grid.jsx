@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledComponent } from './Grid.styled';
 
+// TODO: Fix these props
 const Grid = ({ className, children, ...styleProps }) => {
     const BASE_CLASS_NAME = 'Grid';
 
