@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { defaultTransition, TYPOGRAPHY } from 'src/styles/constants';
 
 const resetStyles = `
     /* http://meyerweb.com/eric/tools/css/reset/
@@ -51,18 +52,31 @@ const resetStyles = `
     }
 `;
 
+const typographyStyles = `
+    font-family: ${TYPOGRAPHY.defaultFontFamily};
+    font-size: ${TYPOGRAPHY.defaultFontSize};
+    line-height: ${TYPOGRAPHY.defaultLineHeight};
+    font-weight: ${TYPOGRAPHY.defaultFontWeight};
+    letter-spacing: ${TYPOGRAPHY.defaultLetterSpacing};
+`;
+
 export const GlobalStyles = createGlobalStyle`
     ${resetStyles}
 
     * {
         box-sizing: border-box;
-        transition: 0.2s cubic-bezier(0, 0.5, 0.2, 1);
+        transition: ${defaultTransition};
     }
 
     body {
         background-color: ${({ theme }) => theme.background};
         color: ${({ theme }) => theme.primaryText};
-        font-family: 'Rubik', sans-serif;
-        transition: 0s, background-color 0.2s cubic-bezier(0, 0.5, 0.2, 1);
+        ${typographyStyles}
+    }
+
+    input, button {
+        ${typographyStyles}
+        outline: none;
+        border: none;
     }
 `;

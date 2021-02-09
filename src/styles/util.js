@@ -1,4 +1,4 @@
-// A file for general use style snippets for styled components
+// General purpose style snippets for styled components
 export const relaBlock = `
     position: relative;
     display: block;
