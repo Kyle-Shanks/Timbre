@@ -5,6 +5,7 @@ import { StyledComponent } from './Button.styled';
 const SIZE = ['l', 'm', 's', 'xs'];
 const VARIATION = ['primary', 'secondary'];
 
+// TODO: Finish this component
 const Button = ({ className, children, disabled, onClick, ...styleProps }) => {
     const BASE_CLASS_NAME = 'Button';
 

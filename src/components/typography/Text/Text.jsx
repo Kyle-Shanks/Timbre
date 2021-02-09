@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledComponent } from './Text.styled';
 
-const ALIGN = ['left', 'center', 'right'];
+const ALIGN = ['left', 'center', 'right', 'justify'];
 const VARIATION = ['primary', 'secondary'];
 
 const Text = ({ children, className, ...styleProps }) => {

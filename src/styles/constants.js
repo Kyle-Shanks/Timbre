@@ -3,6 +3,7 @@ const size0 = '0rem';      // 0px
 const size1 = '0.0625rem'; // 1px
 const size2 = '0.125rem';  // 2px
 const size4 = '0.25rem';   // 4px
+const size6 = '0.375rem';  // 6px
 const size8 = '0.5rem';    // 8px
 const size10 = '0.625rem'; // 10px
 const size12 = '0.75rem';  // 12px
@@ -34,8 +35,9 @@ export const containerPadXS = size8;
 
 export const borderWidth = size1;
 export const borderRadiusL = size8;
-export const borderRadiusM = size4;
-export const borderRadiusS = size2;
+export const borderRadiusM = size6;
+export const borderRadiusS = size4;
+export const borderRadiusXS = size2;
 
 export const defaultTransition = '0.2s cubic-bezier(0, 0.5, 0.2, 1)';
 
