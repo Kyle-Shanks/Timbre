@@ -8,5 +8,6 @@ export const StyledComponent = styled.div`
         ${({ w }) => w && `width: ${w};`}
         ${({ margin }) => margin && `margin: ${margin};`}
         ${({ padding }) => padding && `padding: ${padding};`}
+        ${({ fontSize }) => fontSize && `font-size: ${fontSize};`}
     }
 `;

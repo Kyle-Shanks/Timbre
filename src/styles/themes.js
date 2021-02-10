@@ -22,10 +22,18 @@ export const THEMES = {
         placeholderText: shades.grey40,
         disabledPlaceholderText: shades.grey20,
 
+        filledInputBackground: shades.grey10,
+        filledInputHoverBackground: shades.grey20,
+        filledInputDisabledBackground: shades.grey5,
+
         border: shades.grey30,
         disabledBorder: shades.grey20,
         hoverBorder: shades.grey40,
         activeBorder: colors.blue,
+
+        iconColor: shades.grey40,
+        iconHoverColor: shades.grey60,
+        iconActiveColor: shades.grey60,
     },
     [DARK]: {
         ...sharedColors,
@@ -37,9 +45,17 @@ export const THEMES = {
         placeholderText: shades.grey50,
         disabledPlaceholderText: shades.grey70,
 
+        filledInputBackground: shades.grey70,
+        filledInputHoverBackground: shades.grey60,
+        filledInputDisabledBackground: shades.grey80,
+
         border: shades.grey50,
         disabledBorder: shades.grey60,
         hoverBorder: shades.grey40,
         activeBorder: colors.blue,
+
+        iconColor: shades.grey50,
+        iconHoverColor: shades.grey30,
+        iconActiveColor: shades.grey30,
     },
 };

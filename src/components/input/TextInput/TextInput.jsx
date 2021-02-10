@@ -1,26 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledComponent } from './TextInput.styled';
+import Box from 'src/components/layout/Box';
+import { StyledComponent, Clear } from './TextInput.styled';
 
-const VARIATION = ['primary', 'secondary'];
+const VARIATION = ['outline', 'filled'];
 
-// TODO: Implement variation styles
 const TextInput = ({ className, disabled, onChange, value, ...styleProps }) => {
     const BASE_CLASS_NAME = 'TextInput';
 
-    const handleChange = (e) => {
-        if (!disabled) onChange(e.target.value);
-    };
+    const handleChange = (e) => { if (!disabled) onChange(e.target.value); };
 
     return (
-        <StyledComponent
-            className={`${BASE_CLASS_NAME} ${className}`.trim()}
-            tag="input"
-            disabled={disabled}
-            onChange={handleChange}
-            value={value}
-            {...styleProps}
-        />
+        <Box>
+            <StyledComponent
+                className={`${BASE_CLASS_NAME} ${className}`.trim()}
+                tag="input"
+                disabled={disabled}
+                onChange={handleChange}
+                value={value}
+                {...styleProps}
+            />
+            <Clear
+                tag="svg"
+                viewBox="0 0 50 50"
+                active={!disabled && value.length}
+                onClick={() => onChange('')}
+            >
+                <defs>
+                    <mask id="cutout">
+                        <rect x="0" y="0" height="50" width="50" fill="#fff" />
+                        <path d="M 21 21 L 29 29" stroke="#000"/>
+                        <path d="M 21 29 L 29 21" stroke="#000"/>
+                    </mask>
+                </defs>
+                <circle cx="25" cy="25" r="12" stroke="none" mask="url(#cutout)" />
+            </Clear>
+        </Box>
     );
 };
 

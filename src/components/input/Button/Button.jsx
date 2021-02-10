@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledComponent } from './Button.styled';
 
+// TODO: Implement size and variation styles
 const SIZE = ['l', 'm', 's', 'xs'];
-const VARIATION = ['primary', 'secondary'];
+const VARIATION = ['primary', 'secondary', 'tertiary'];
 
-// TODO: Finish this component
+// TODO: Implement icon support
+
 const Button = ({ className, children, disabled, onClick, ...styleProps }) => {
     const BASE_CLASS_NAME = 'Button';
 

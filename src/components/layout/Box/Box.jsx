@@ -26,6 +26,7 @@ Box.propTypes = {
     w: PropTypes.string,
     margin: PropTypes.string,
     padding: PropTypes.string,
+    fontSize: PropTypes.string,
 };
 
 Box.defaultProps = {
@@ -38,6 +39,7 @@ Box.defaultProps = {
     w: '',
     margin: '',
     padding: '',
+    fontSize: '',
 };
 
 export default Box;
