@@ -1,27 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledComponent } from './Button.styled';
+import { StyledComponent, Label } from './Button.styled';
 
 // TODO: Implement size and variation styles
 const SIZE = ['l', 'm', 's', 'xs'];
-const VARIATION = ['primary', 'secondary', 'tertiary'];
+const VARIATION = ['primary', 'secondary', 'tertiary', 'icon'];
 
-// TODO: Implement icon support
-
-const Button = ({ className, children, disabled, onClick, ...styleProps }) => {
+const Button = ({
+    className,
+    children,
+    disabled,
+    iconLeft,
+    iconRight,
+    loading,
+    loadingText,
+    onClick,
+    ...styleProps
+}) => {
     const BASE_CLASS_NAME = 'Button';
 
     const handleClick = (e) => { if (!disabled) onClick(e); };
 
     return (
         <StyledComponent
+            align="center"
             className={`${BASE_CLASS_NAME} ${className}`.trim()}
             tag="button"
             disabled={disabled}
             onClick={handleClick}
             {...styleProps}
         >
-            {children}
+            {!loading && iconLeft}
+            <Label>{loading ? loadingText : children}</Label>
+            {!loading && iconRight}
         </StyledComponent>
     );
 };
@@ -30,6 +41,9 @@ Button.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
     disabled: PropTypes.bool,
+    iconLeft: PropTypes.node,
+    iconRight: PropTypes.node,
+    loading: PropTypes.bool,
     onClick: PropTypes.func,
 
     // Style props
@@ -41,6 +55,10 @@ Button.defaultProps = {
     className: '',
     children: null,
     disabled: false,
+    iconLeft: null,
+    iconRight: null,
+    loading: false,
+    loadingText: 'loading...',
     onClick: () => {},
 
     // Style Props

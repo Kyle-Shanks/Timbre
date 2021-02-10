@@ -70,11 +70,11 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
         background-color: ${({ theme }) => theme.background};
-        color: ${({ theme }) => theme.primaryText};
+        color: ${({ theme }) => theme.textPrimary};
         ${typographyStyles}
     }
 
-    input, button {
+    input, button, select {
         ${typographyStyles}
         outline: none;
         border: none;

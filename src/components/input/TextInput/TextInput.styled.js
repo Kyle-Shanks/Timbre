@@ -16,7 +16,7 @@ const getBorderColor = ({ theme, disabled, error, variation }) => {
         const c = disabled ? theme.filledInputDisabledBackground : theme.filledInputBackground;
         return `${borderWidth} solid ${c}`;
     }
-    return `${borderWidth} solid ${disabled ? theme.disabledBorder : theme.border}`;
+    return `${borderWidth} solid ${disabled ? theme.borderDisabled : theme.border}`;
 };
 
 const getHoverBackgroundColor = ({ theme, variation, disabled }) => {
@@ -32,13 +32,13 @@ const getHoverBorderColor = ({ theme, disabled, error, variation }) => {
         const c = disabled ? theme.filledInputDisabledBackground : theme.filledInputHoverBackground;
         return `${borderWidth} solid ${c}`;
     }
-    return `${borderWidth} solid ${disabled ? theme.disabledBorder : theme.hoverBorder}`;
+    return `${borderWidth} solid ${disabled ? theme.borderDisabled : theme.borderHover}`;
 };
 
 export const StyledComponent = styled(Box)`
     min-width: 16rem;
     padding: ${SPACING.s} ${SPACING.l} ${SPACING.s} ${SPACING.m};
-    color: ${({ theme, disabled }) => disabled ? theme.disabledText : theme.primaryText};
+    color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
     background-color: ${(props) => getBackgroundColor(props)};
     border: ${(props) => getBorderColor(props)};
     border-radius: ${borderRadiusM};
@@ -46,7 +46,7 @@ export const StyledComponent = styled(Box)`
 
     &::placeholder {
         transition: ${defaultTransition};
-        color: ${({ theme, disabled }) => disabled ? theme.disabledPlaceholderText : theme.placeholderText};
+        color: ${({ theme, disabled }) => disabled ? theme.textDisabledPlaceholder : theme.textPlaceholder};
     }
 
     &:hover {
@@ -56,8 +56,8 @@ export const StyledComponent = styled(Box)`
 
     &:focus {
         background-color: ${({ theme }) => theme.background};
-        border: ${({ theme, error }) => `${borderWidth} solid ${error ? theme.error : theme.activeBorder}`};
-        box-shadow: 0 0 0 1px ${({ theme, error }) => (error ? theme.error : theme.activeBorder)};
+        border: ${({ theme, error }) => `${borderWidth} solid ${error ? theme.error : theme.borderActive}`};
+        box-shadow: 0 0 0 1px ${({ theme, error }) => (error ? theme.error : theme.borderActive)};
     }
 `;
 
@@ -74,6 +74,6 @@ export const Clear = styled(Box)`
     fill: none;
     stroke-width: 2.5;
     stroke-linecap: round;
-    & > circle { fill: ${({ theme }) => theme.iconColor}; }
-    &:hover > circle { fill: ${({ theme }) => theme.iconHoverColor}; }
+    & > circle { fill: ${({ theme }) => theme.icon}; }
+    &:hover > circle { fill: ${({ theme }) => theme.iconHover}; }
 `;

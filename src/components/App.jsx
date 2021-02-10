@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
 import Button from 'src/components/input/Button';
+import NativeSelect from 'src/components/input/NativeSelect';
 import TextInput from 'src/components/input/TextInput';
 import Box from 'src/components/layout/Box';
 import Container from 'src/components/layout/Container';
 import Flex from 'src/components/layout/Flex';
 import Header from 'src/components/typography/Header';
+import Icon from 'src/components/typography/Icon';
 import Text from 'src/components/typography/Text';
 import { GlobalStyles } from 'src/styles/globalStyles';
 import { THEMES, LIGHT, DARK } from 'src/styles/themes';
@@ -17,9 +19,11 @@ const App = ({ className }) => {
     const BASE_CLASS_NAME = 'App';
     const [theme, setTheme] = useState(LIGHT);
     const [text, setText] = useState('');
+    const [selectValue, setSelectValue] = useState('');
 
     const toggleTheme = () => (theme === LIGHT ? setTheme(DARK) : setTheme(LIGHT));
     const handleTextChange = (val) => setText(val);
+    const handleSelectChange = (val) => setSelectValue(val);
 
     return (
         <ThemeProvider theme={THEMES[theme]}>
@@ -45,7 +49,20 @@ const App = ({ className }) => {
                 <Text fontSize={FONT_SIZE.xl}>Bigger Text</Text>
                 <Text fontSize={FONT_SIZE.xxl} margin={`0 0 ${SPACING.l}`}>Biggest Text</Text>
 
-                <Button margin={`0 0 ${SPACING.l}`} onClick={toggleTheme}>Toggle Theme</Button>
+                <Button
+                    iconLeft={<Icon icon="Bolt" />}
+                    margin={`0 0 ${SPACING.s}`}
+                    onClick={toggleTheme}
+                >
+                    Toggle Theme
+                </Button>
+                <Button
+                    variation="icon"
+                    margin={`0 0 ${SPACING.l}`}
+                    onClick={toggleTheme}
+                >
+                    <Icon icon="Bolt" />
+                </Button>
 
                 <Flex>
                     <Box>
@@ -97,6 +114,49 @@ const App = ({ className }) => {
                         />
                     </Box>
                 </Flex>
+
+                <NativeSelect
+                    onChange={handleSelectChange}
+                    placeholder="Select an option..."
+                    options={
+                        [
+                            { label: 'A', value: 'a' },
+                            { label: 'B', value: 'b' },
+                            { label: 'C', value: 'c' },
+                            { label: 'D', value: 'd' },
+                        ]
+                    }
+                    value={selectValue}
+                />
+                <NativeSelect
+                    disabled
+                    onChange={handleSelectChange}
+                    placeholder="Select an option..."
+                    options={
+                        [
+                            { label: 'A', value: 'a' },
+                            { label: 'B', value: 'b' },
+                            { label: 'C', value: 'c' },
+                            { label: 'D', value: 'd' },
+                        ]
+                    }
+                    value={selectValue}
+                />
+                <NativeSelect
+                    error
+                    margin={'0 0 4rem'}
+                    onChange={handleSelectChange}
+                    placeholder="Select an option..."
+                    options={
+                        [
+                            { label: 'A', value: 'a' },
+                            { label: 'B', value: 'b' },
+                            { label: 'C', value: 'c' },
+                            { label: 'D', value: 'd' },
+                        ]
+                    }
+                    value={selectValue}
+                />
             </Container>
         </ThemeProvider>
     );

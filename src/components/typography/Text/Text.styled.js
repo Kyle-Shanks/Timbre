@@ -4,7 +4,7 @@ import { ellipsisStyles } from 'src/styles/util';
 import { TYPOGRAPHY } from 'src/styles/constants';
 
 export const StyledComponent = styled(Box)`
-    color: ${({ theme, variation }) => variation === 'primary' ? theme.primaryText : theme.secondaryText};
+    color: ${({ theme, variation }) => variation === 'primary' ? theme.textPrimary : theme.textSecondary};
     font-size: ${({ variation }) => TYPOGRAPHY[variation].fontSize};
     font-weight: ${({ variation }) => TYPOGRAPHY[variation].fontWeight};
     letter-spacing: ${({ variation }) => TYPOGRAPHY[variation].letterSpacing};

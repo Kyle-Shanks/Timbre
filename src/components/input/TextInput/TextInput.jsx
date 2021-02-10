@@ -11,9 +11,9 @@ const TextInput = ({ className, disabled, onChange, value, ...styleProps }) => {
     const handleChange = (e) => { if (!disabled) onChange(e.target.value); };
 
     return (
-        <Box>
+        <Box className={`${BASE_CLASS_NAME}__wrapper ${className}`.trim()}>
             <StyledComponent
-                className={`${BASE_CLASS_NAME} ${className}`.trim()}
+                className={`${BASE_CLASS_NAME}`}
                 tag="input"
                 disabled={disabled}
                 onChange={handleChange}
