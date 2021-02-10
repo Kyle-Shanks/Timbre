@@ -5,24 +5,38 @@ import { StyledComponent, Clear } from './TextInput.styled';
 
 const VARIATION = ['outline', 'filled'];
 
-const TextInput = ({ className, disabled, onChange, value, ...styleProps }) => {
+const TextInput = ({
+    className,
+    disabled,
+    error,
+    onChange,
+    placeholder,
+    value,
+    variation,
+    theme,
+    ...styleProps
+}) => {
     const BASE_CLASS_NAME = 'TextInput';
-
     const handleChange = (e) => { if (!disabled) onChange(e.target.value); };
 
     return (
-        <Box className={`${BASE_CLASS_NAME}__wrapper ${className}`.trim()}>
+        <Box className={`${BASE_CLASS_NAME}__wrapper ${className}`.trim()} {...styleProps}>
             <StyledComponent
-                className={`${BASE_CLASS_NAME}`}
+                className={BASE_CLASS_NAME}
                 tag="input"
                 disabled={disabled}
+                error={error}
                 onChange={handleChange}
+                placeholder={placeholder}
+                variation={variation}
                 value={value}
-                {...styleProps}
+                theme={theme}
+                w="100%"
             />
             <Clear
                 tag="svg"
                 viewBox="0 0 50 50"
+                theme={theme}
                 active={!disabled && value.length}
                 onClick={() => onChange('')}
             >
@@ -44,6 +58,7 @@ TextInput.propTypes = {
     disabled: PropTypes.bool,
     error: PropTypes.bool,
     onChange: PropTypes.func,
+    placeholder: PropTypes.string,
     value: PropTypes.string.isRequired,
     variation: PropTypes.oneOf(VARIATION),
 };
@@ -53,6 +68,7 @@ TextInput.defaultProps = {
     disabled: false,
     error: false,
     onChange: () => {},
+    placeholder: '',
     variation: VARIATION[0],
 };
 

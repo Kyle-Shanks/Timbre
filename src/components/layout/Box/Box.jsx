@@ -22,6 +22,7 @@ Box.propTypes = {
     tag: PropTypes.elementType,
 
     // Style Props
+    display: PropTypes.string,
     h: PropTypes.string,
     w: PropTypes.string,
     margin: PropTypes.string,
@@ -35,6 +36,7 @@ Box.defaultProps = {
     tag: 'div',
 
     // Style Props
+    display: '',
     h: '',
     w: '',
     margin: '',

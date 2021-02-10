@@ -1,6 +1,10 @@
 import ArrowLeft from './ArrowLeft';
 import ArrowRight from './ArrowRight';
 import Bolt from './Bolt';
+import ChevronDown from './ChevronDown';
+import ChevronLeft from './ChevronLeft';
+import ChevronRight from './ChevronRight';
+import ChevronUp from './ChevronUp';
 import CircleAlert from './CircleAlert';
 import CircleCheck from './CircleCheck';
 import CircleHelp from './CircleHelp';
@@ -22,6 +26,10 @@ export default {
     ArrowLeft,
     ArrowRight,
     Bolt,
+    ChevronDown,
+    ChevronLeft,
+    ChevronRight,
+    ChevronUp,
     CircleAlert,
     CircleCheck,
     CircleHelp,

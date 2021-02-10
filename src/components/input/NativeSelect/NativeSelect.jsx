@@ -1,23 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { StyledComponent } from './NativeSelect.styled';
+import Box from 'src/components/layout/Box';
+import { StyledComponent, ArrowIcon } from './NativeSelect.styled';
 
-const NativeSelect = ({ className, disabled, onChange, options, value, ...styleProps }) => {
+const NativeSelect = ({ className, disabled, error, onChange, options, placeholder, value, ...styleProps }) => {
     const BASE_CLASS_NAME = 'NativeSelect';
 
     return (
-        <StyledComponent
-            className={`${BASE_CLASS_NAME} ${className}`.trim()}
-            tag="select"
-            disabled={disabled}
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-            {...styleProps}
-        >
-            {options.map((opt, idx) => (
-                <option value={opt.value} key={`option_${idx}`}>{opt.label}</option>
-            ))}
-        </StyledComponent>
+        <Box className={`${BASE_CLASS_NAME}__wrapper ${className}`.trim()} {...styleProps}>
+            <StyledComponent
+                className={BASE_CLASS_NAME}
+                tag="select"
+                disabled={disabled}
+                error={error}
+                value={value}
+                onChange={(e) => onChange(e.target.value)}
+                placeholder={placeholder}
+                w="100%"
+            >
+                {options.map((opt, idx) => (
+                    <option value={opt.value} key={`option_${idx}`}>{opt.label}</option>
+                ))}
+            </StyledComponent>
+            <ArrowIcon icon="ChevronDown" />
+        </Box>
     );
 };
 
@@ -32,6 +38,7 @@ NativeSelect.propTypes = {
             value: PropTypes.string.isRequired,
         })
     ).isRequired,
+    placeholder: PropTypes.string,
     value: PropTypes.string.isRequired,
 };
 
@@ -40,6 +47,7 @@ NativeSelect.defaultProps = {
     disabled: false,
     error: false,
     onChange: () => {},
+    placeholder: '',
 };
 
 export default NativeSelect;

@@ -115,7 +115,25 @@ const App = ({ className }) => {
                     </Box>
                 </Flex>
 
+                <TextInput
+                    margin={`0 0 ${SPACING.s}`}
+                    value={text}
+                    placeholder="Enter the beans here..."
+                    onChange={handleTextChange}
+                    w="34rem"
+                />
+                <TextInput
+                    variation="filled"
+                    margin={`0 0 ${SPACING.l}`}
+                    value={text}
+                    placeholder="Enter the beans here..."
+                    onChange={handleTextChange}
+                    w="34rem"
+                />
+
                 <NativeSelect
+                    margin={`0 0 ${SPACING.s}`}
+                    w="34rem"
                     onChange={handleSelectChange}
                     placeholder="Select an option..."
                     options={
@@ -130,6 +148,8 @@ const App = ({ className }) => {
                 />
                 <NativeSelect
                     disabled
+                    margin={`0 0 ${SPACING.s}`}
+                    w="34rem"
                     onChange={handleSelectChange}
                     placeholder="Select an option..."
                     options={
@@ -145,6 +165,7 @@ const App = ({ className }) => {
                 <NativeSelect
                     error
                     margin={'0 0 4rem'}
+                    w="34rem"
                     onChange={handleSelectChange}
                     placeholder="Select an option..."
                     options={

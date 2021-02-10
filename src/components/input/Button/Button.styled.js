@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import Flex from 'src/components/layout/Flex';
 import Box from 'src/components/layout/Box';
 import { SPACING, FONT_WEIGHT, borderRadiusM } from 'src/styles/constants';
 
-export const StyledComponent = styled(Flex)`
+export const StyledComponent = styled(Box)`
     cursor: pointer;
     min-width: ${({ variation }) => variation === 'icon' ? '0rem' : `6rem`};
     padding: ${({ variation }) => variation === 'icon' ? SPACING.xs : `${SPACING.s} ${SPACING.m}`};
@@ -23,5 +22,6 @@ export const StyledComponent = styled(Flex)`
 `;
 
 export const Label = styled(Box)`
+    color: ${({ theme }) => theme.background};
     padding: ${SPACING.xs};
 `;

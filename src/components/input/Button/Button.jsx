@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Flex from 'src/components/layout/Flex';
 import { StyledComponent, Label } from './Button.styled';
 
 // TODO: Implement size and variation styles
@@ -23,16 +24,17 @@ const Button = ({
 
     return (
         <StyledComponent
-            align="center"
             className={`${BASE_CLASS_NAME} ${className}`.trim()}
             tag="button"
             disabled={disabled}
             onClick={handleClick}
             {...styleProps}
         >
-            {!loading && iconLeft}
-            <Label>{loading ? loadingText : children}</Label>
-            {!loading && iconRight}
+            <Flex align="center">
+                {!loading && iconLeft}
+                <Label>{loading ? loadingText : children}</Label>
+                {!loading && iconRight}
+            </Flex>
         </StyledComponent>
     );
 };
