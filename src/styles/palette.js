@@ -1,3 +1,5 @@
+// TODO: Add color shades and tints
+
 // Colors
 export const colors = {
     red:    '#ef5656',

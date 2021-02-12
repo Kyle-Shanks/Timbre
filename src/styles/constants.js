@@ -42,6 +42,10 @@ export const borderRadiusXS = size2;
 export const defaultTransition = '0.25s cubic-bezier(0, 0.5, 0.2, 1)';
 
 export const defaultIconSize = size24;
+export const iconSizeXL = size48;
+export const iconSizeL = size32;
+export const iconSizeM = size24;
+export const iconSizeS = size16;
 export const defaultIconStrokeWidth = 2;
 
 // Typography constants

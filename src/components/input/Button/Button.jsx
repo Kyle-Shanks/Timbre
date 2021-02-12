@@ -4,8 +4,8 @@ import Flex from 'src/components/layout/Flex';
 import { StyledComponent, Label } from './Button.styled';
 
 // TODO: Implement size and variation styles
-const SIZE = ['l', 'm', 's', 'xs'];
-const VARIATION = ['primary', 'secondary', 'tertiary', 'icon'];
+const SIZE = ['l', 'm', 's', 'icon'];
+const VARIATION = ['primary', 'secondary', 'tertiary'];
 
 const Button = ({
     className,
@@ -16,6 +16,8 @@ const Button = ({
     loading,
     loadingText,
     onClick,
+    theme,
+    variation,
     ...styleProps
 }) => {
     const BASE_CLASS_NAME = 'Button';
@@ -28,11 +30,13 @@ const Button = ({
             tag="button"
             disabled={disabled}
             onClick={handleClick}
+            theme={theme}
+            variation={variation}
             {...styleProps}
         >
             <Flex align="center">
                 {!loading && iconLeft}
-                <Label>{loading ? loadingText : children}</Label>
+                <Label theme={theme} variation={variation}>{loading ? loadingText : children}</Label>
                 {!loading && iconRight}
             </Flex>
         </StyledComponent>

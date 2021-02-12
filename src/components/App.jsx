@@ -49,7 +49,47 @@ const App = ({ className }) => {
                 <Text fontSize={FONT_SIZE.xl}>Bigger Text</Text>
                 <Text fontSize={FONT_SIZE.xxl} margin={`0 0 ${SPACING.l}`}>Biggest Text</Text>
 
+                <Container margin={`0 0 ${SPACING.l}`}>
+                    <Text fontSize={FONT_SIZE.l}>Icons</Text>
+                    <Flex align="center">
+                        <Icon display="inline-block" size="xl" icon="Bolt" />
+                        <Icon display="inline-block" size="l" icon="Bolt" />
+                        <Icon display="inline-block" size="m" icon="Bolt" />
+                        <Icon display="inline-block" size="s" icon="Bolt" />
+                    </Flex>
+                </Container>
+
                 <Button
+                    size="l"
+                    margin={`0 0 ${SPACING.s}`}
+                    onClick={toggleTheme}
+                >
+                    Toggle Theme
+                </Button>
+                <Button
+                    size="m"
+                    margin={`0 0 ${SPACING.s}`}
+                    onClick={toggleTheme}
+                >
+                    Toggle Theme
+                </Button>
+                <Button
+                    size="s"
+                    margin={`0 0 ${SPACING.s}`}
+                    onClick={toggleTheme}
+                >
+                    Toggle Theme
+                </Button>
+                <Button
+                    size="icon"
+                    margin={`0 0 ${SPACING.l}`}
+                    onClick={toggleTheme}
+                >
+                    <Icon icon="Bolt" />
+                </Button>
+
+                <Button
+                    variation="secondary"
                     iconLeft={<Icon icon="Bolt" />}
                     margin={`0 0 ${SPACING.s}`}
                     onClick={toggleTheme}
@@ -57,7 +97,25 @@ const App = ({ className }) => {
                     Toggle Theme
                 </Button>
                 <Button
-                    variation="icon"
+                    variation="secondary"
+                    size="icon"
+                    margin={`0 0 ${SPACING.l}`}
+                    onClick={toggleTheme}
+                >
+                    <Icon icon="Bolt" />
+                </Button>
+
+                <Button
+                    variation="tertiary"
+                    iconLeft={<Icon icon="Bolt" />}
+                    margin={`0 0 ${SPACING.s}`}
+                    onClick={toggleTheme}
+                >
+                    Toggle Theme
+                </Button>
+                <Button
+                    variation="tertiary"
+                    size="icon"
                     margin={`0 0 ${SPACING.l}`}
                     onClick={toggleTheme}
                 >

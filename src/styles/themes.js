@@ -11,10 +11,13 @@ const sharedColors = {
     primary: colors.teal,
 };
 
+// TODO: Update buttonPrimaryHoverBackground for each
+
 export const THEMES = {
     [LIGHT]: {
         ...sharedColors,
         background: shades.white,
+        backgroundActive: shades.grey20,
 
         textPrimary: shades.grey70,
         textSecondary: shades.grey50,
@@ -26,19 +29,23 @@ export const THEMES = {
         filledInputHoverBackground: shades.grey20,
         filledInputDisabledBackground: shades.grey5,
 
-        border: shades.grey30,
+        border: shades.grey40,
         borderDisabled: shades.grey20,
-        borderHover: shades.grey40,
+        borderHover: shades.grey50,
         borderActive: colors.blue,
 
         icon: shades.grey40,
         iconHover: shades.grey60,
         iconActive: shades.grey60,
+
+        buttonPrimaryBackground: colors.teal,
+        buttonPrimaryHoverBackground: colors.teal,
     },
     [DARK]: {
         ...sharedColors,
         // background: shades.grey90,
         background: shades.grey80,
+        backgroundActive: shades.grey60,
 
         textPrimary: shades.grey10,
         textSecondary: shades.grey40,
@@ -58,5 +65,8 @@ export const THEMES = {
         icon: shades.grey50,
         iconHover: shades.grey30,
         iconActive: shades.grey30,
+
+        buttonPrimaryBackground: colors.teal,
+        buttonPrimaryHoverBackground: colors.teal,
     },
 };
