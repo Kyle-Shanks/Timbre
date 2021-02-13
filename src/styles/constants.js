@@ -9,6 +9,7 @@ const size10 = '0.625rem'; // 10px
 const size12 = '0.75rem';  // 12px
 const size14 = '0.875rem'; // 14px
 const size16 = '1rem';     // 16px
+const size20 = '1.25rem';  // 20px
 const size24 = '1.5rem';   // 24px
 const size32 = '2rem';     // 32px
 const size40 = '2.5rem';   // 40px
@@ -41,6 +42,8 @@ export const borderRadiusS = size4;
 export const borderRadiusXS = size2;
 
 export const defaultTransition = '0.25s cubic-bezier(0, 0.5, 0.2, 1)';
+
+export const defaultCheckboxSize = size20;
 
 export const defaultIconSize = size24;
 export const iconSizeXL = size48;

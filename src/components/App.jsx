@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
 import Button from 'src/components/input/Button';
+import Checkbox from 'src/components/input/Checkbox';
 import NativeSelect from 'src/components/input/NativeSelect';
 import TextInput from 'src/components/input/TextInput';
 import Box from 'src/components/layout/Box';
@@ -20,6 +21,7 @@ const App = ({ className }) => {
     const [theme, setTheme] = useState(LIGHT);
     const [text, setText] = useState('');
     const [selectValue, setSelectValue] = useState('');
+    const [checkValue, setCheckValue] = useState(false);
 
     const toggleTheme = () => (theme === LIGHT ? setTheme(DARK) : setTheme(LIGHT));
     const handleTextChange = (val) => setText(val);
@@ -28,7 +30,11 @@ const App = ({ className }) => {
     return (
         <ThemeProvider theme={THEMES[theme]}>
             <GlobalStyles />
-            <Container padding={containerPadM} className={`${BASE_CLASS_NAME} ${className}`.trim()}>
+            <Container
+                className={`${BASE_CLASS_NAME} ${className}`.trim()}
+                padding={containerPadM}
+                margin="0 auto"
+            >
                 <Container margin={`0 0 ${SPACING.l}`}>
                     <Header tag="h1">Hello, world!</Header>
                     <Header tag="h2">Hello, world!</Header>
@@ -57,6 +63,24 @@ const App = ({ className }) => {
                         <Icon display="inline-block" size="m" icon="Bolt" />
                         <Icon display="inline-block" size="s" icon="Bolt" />
                     </Flex>
+                </Container>
+
+                <Container margin={`0 0 ${SPACING.l}`}>
+                    <Text fontSize={FONT_SIZE.l}>Checkboxes</Text>
+                    <Checkbox
+                        margin={`0 ${SPACING.m} 0 0`}
+                        value={checkValue}
+                        onChange={(val) => setCheckValue(val)}
+                    >
+                        Checkbox
+                    </Checkbox>
+                    <Checkbox
+                        disabled
+                        value={checkValue}
+                        onChange={(val) => setCheckValue(val)}
+                    >
+                        Disabled Checkbox
+                    </Checkbox>
                 </Container>
 
                 <Button
