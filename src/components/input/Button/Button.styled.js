@@ -9,7 +9,7 @@ import {
 
 const getPadding = ({ size }) => {
     switch (size) {
-        case 'l': return SPACING.m;
+        case 'l': return `${SPACING.m} ${SPACING.ml}`;
         case 'm': return `${SPACING.s} ${SPACING.m}`;
         case 's': return `${SPACING.xxs} ${SPACING.s}`;
         case 'icon': return SPACING.xs;

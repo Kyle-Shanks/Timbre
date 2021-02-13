@@ -39,7 +39,7 @@ export const THEMES = {
         iconActive: shades.grey60,
 
         buttonPrimaryBackground: colors.teal,
-        buttonPrimaryHoverBackground: colors.teal,
+        buttonPrimaryHoverBackground: colors.tealDark,
     },
     [DARK]: {
         ...sharedColors,
@@ -67,6 +67,6 @@ export const THEMES = {
         iconActive: shades.grey30,
 
         buttonPrimaryBackground: colors.teal,
-        buttonPrimaryHoverBackground: colors.teal,
+        buttonPrimaryHoverBackground: colors.tealLite,
     },
 };

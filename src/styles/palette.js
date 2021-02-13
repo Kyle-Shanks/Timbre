@@ -1,14 +1,32 @@
-// TODO: Add color shades and tints
-
 // Colors
 export const colors = {
     red:    '#ef5656',
+    redLite: '#f69c9c',
+    redDark: '#e31515',
+
     orange: '#ef7e33',
+    orangeLite: '#f5ab7a',
+    orangeDark: '#c65810',
+
     yellow: '#ffdf6c',
+    yellowLite: '#fff0b9',
+    yellowDark: '#ffce20',
+
     green:  '#2ac889',
+    greenLite: '#61deac',
+    greenDark: '#1d895e',
+
     teal:   '#4ca2a1',
+    tealLite: '#7ac1c0',
+    tealDark: '#346e6d',
+
     blue:   '#2a89c8',
+    blueLite: '#61acde',
+    blueDark: '#1d5e89',
+
     purple: '#805ad5',
+    purpleLite: '#af97e5',
+    purpleDark: '#582eb5',
 };
 
 // Shades
