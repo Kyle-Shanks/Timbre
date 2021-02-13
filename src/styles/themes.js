@@ -11,8 +11,6 @@ const sharedColors = {
     primary: colors.teal,
 };
 
-// TODO: Update buttonPrimaryHoverBackground for each
-
 export const THEMES = {
     [LIGHT]: {
         ...sharedColors,
@@ -43,8 +41,8 @@ export const THEMES = {
     },
     [DARK]: {
         ...sharedColors,
-        // background: shades.grey90,
-        background: shades.grey80,
+        background: shades.grey90,
+        // background: shades.grey80,
         backgroundActive: shades.grey60,
 
         textPrimary: shades.grey10,

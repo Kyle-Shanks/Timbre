@@ -1,21 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Flex from 'src/components/layout/Flex'
-import { StyledComponent, CheckboxSvg } from './Checkbox.styled';
+import Flex from 'src/components/layout/Flex';
+import { StyledComponent, RadioSvg } from './RadioButton.styled';
 
-const Checkbox = ({
+const RadioButton = ({
     className,
     checked,
     children,
     disabled,
-    onChange,
+    onClick,
     theme,
+    value,
     ...styleProps
 }) => {
-    const BASE_CLASS_NAME = 'Checkbox';
+    const BASE_CLASS_NAME = 'RadioButton';
 
     const handleClick = () => {
-        if (!disabled) onChange(!checked)
+        if (!disabled) onClick(value);
     };
 
     return (
@@ -27,34 +28,34 @@ const Checkbox = ({
             {...styleProps}
         >
             <Flex>
-                <CheckboxSvg
+                <RadioSvg
                     tag="svg"
                     viewBox="0 0 60 60"
-                    checked={checked}
                     disabled={disabled}
                     theme={theme}
                 >
-                    <rect x="3" y="1.5" width="54" height="54" rx="8" />
-                    <path d="M 18.6 31 L 25.7 37.5 L 42.4 20" />
-                </CheckboxSvg>
+                    <circle className="outline" cx="30" cy="30" r="25" />
+                    <circle className="fill" cx="30" cy="30" r={checked ? "14" : "0"} />
+                </RadioSvg>
                 {children}
             </Flex>
         </StyledComponent>
     );
 };
 
-Checkbox.propTypes = {
+RadioButton.propTypes = {
     className: PropTypes.string,
     checked: PropTypes.bool.isRequired,
     children: PropTypes.node,
     disabled: PropTypes.bool,
-    onChange: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
 };
 
-Checkbox.defaultProps = {
+RadioButton.defaultProps = {
     className: '',
     children: null,
     disabled: false,
 };
 
-export default Checkbox;
+export default RadioButton;

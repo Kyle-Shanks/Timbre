@@ -4,6 +4,8 @@ import { ThemeProvider } from 'styled-components';
 
 import Button from 'src/components/input/Button';
 import Checkbox from 'src/components/input/Checkbox';
+import RadioButton from 'src/components/input/RadioButton';
+import RadioGroup from 'src/components/input/RadioGroup';
 import NativeSelect from 'src/components/input/NativeSelect';
 import TextInput from 'src/components/input/TextInput';
 import Box from 'src/components/layout/Box';
@@ -21,7 +23,9 @@ const App = ({ className }) => {
     const [theme, setTheme] = useState(LIGHT);
     const [text, setText] = useState('');
     const [selectValue, setSelectValue] = useState('');
-    const [checkValue, setCheckValue] = useState(false);
+    const [checkValue, setCheckValue] = useState(true);
+    const [radioValue, setRadioValue] = useState(true);
+    const [radioGroupValue, setRadioGroupValue] = useState('');
 
     const toggleTheme = () => (theme === LIGHT ? setTheme(DARK) : setTheme(LIGHT));
     const handleTextChange = (val) => setText(val);
@@ -69,18 +73,52 @@ const App = ({ className }) => {
                     <Text fontSize={FONT_SIZE.l}>Checkboxes</Text>
                     <Checkbox
                         margin={`0 ${SPACING.m} 0 0`}
-                        value={checkValue}
+                        checked={checkValue}
                         onChange={(val) => setCheckValue(val)}
                     >
                         Checkbox
                     </Checkbox>
                     <Checkbox
                         disabled
-                        value={checkValue}
+                        checked={checkValue}
                         onChange={(val) => setCheckValue(val)}
                     >
                         Disabled Checkbox
                     </Checkbox>
+                </Container>
+
+                <Container margin={`0 0 ${SPACING.l}`}>
+                    <Text fontSize={FONT_SIZE.l}>Radio Buttons</Text>
+                    <RadioButton
+                        margin={`0 ${SPACING.m} 0 0`}
+                        checked={radioValue}
+                        onClick={() => setRadioValue(!radioValue)}
+                        value="1"
+                    >
+                        Radio
+                    </RadioButton>
+                    <RadioButton
+                        disabled
+                        checked={!radioValue}
+                        onClick={(val) => {}}
+                        value="2"
+                    >
+                        Disabled Radio
+                    </RadioButton>
+                </Container>
+
+                <Container margin={`0 0 ${SPACING.l}`}>
+                    <Text fontSize={FONT_SIZE.l}>Radio Group</Text>
+                    <RadioGroup
+                        defaultValue={radioGroupValue}
+                        onChange={(val) => setRadioGroupValue(val)}
+                        options={[
+                            { label: 'Option A', value: 'a' },
+                            { label: 'Option B', value: 'b' },
+                            { label: 'Option C', value: 'c', disabled: true },
+                            { label: 'Option D', value: 'd' },
+                        ]}
+                    />
                 </Container>
 
                 <Button
