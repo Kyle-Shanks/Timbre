@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
+import Menu from 'src/components/display/Menu';
 import Button from 'src/components/input/Button';
 import Checkbox from 'src/components/input/Checkbox';
 import RadioButton from 'src/components/input/RadioButton';
@@ -28,6 +29,7 @@ const App = ({ className }) => {
     const [checkValue, setCheckValue] = useState(true);
     const [radioValue, setRadioValue] = useState(true);
     const [radioGroupValue, setRadioGroupValue] = useState('');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleTheme = () => (theme === LIGHT ? setTheme(DARK) : setTheme(LIGHT));
     const handleTextChange = (val) => setText(val);
@@ -61,11 +63,36 @@ const App = ({ className }) => {
                 <Text fontSize={FONT_SIZE.xxl} margin={`0 0 ${SPACING.l}`}>Biggest Text</Text>
 
                 <Text fontSize={FONT_SIZE.l}>Icons</Text>
-                <Container margin={`0 0 ${SPACING.l}`} hGap={SPACING.s}>
+                <Container margin={`0 0 ${SPACING.s}`} hGap={SPACING.s}>
                     <Icon size="xl" icon="Bolt" />
                     <Icon size="l" icon="Bolt" />
                     <Icon size="m" icon="Bolt" />
                     <Icon size="s" icon="Bolt" />
+                </Container>
+                <Container margin={`0 0 ${SPACING.l}`} hGap={SPACING.s}>
+                    <Icon icon="ArrowLeft" />
+                    <Icon icon="ArrowRight" />
+                    <Icon icon="Bolt" />
+                    <Icon icon="ChevronDown" />
+                    <Icon icon="ChevronLeft" />
+                    <Icon icon="ChevronRight" />
+                    <Icon icon="ChevronUp" />
+                    <Icon icon="CircleAlert" />
+                    <Icon icon="CircleCheck" />
+                    <Icon icon="CircleHelp" />
+                    <Icon icon="CircleInfo" />
+                    <Icon icon="CircleMinus" />
+                    <Icon icon="CirclePlus" />
+                    <Icon icon="CircleX" />
+                    <Icon icon="Dots" />
+                    <Icon icon="Download" />
+                    <Icon icon="Edit" />
+                    <Icon icon="ExternalLink" />
+                    <Icon icon="FileDownload" />
+                    <Icon icon="Search" />
+                    <Icon icon="Settings" />
+                    <Icon icon="Upload" />
+                    <Icon icon="X" />
                 </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Checkboxes</Text>
@@ -158,6 +185,23 @@ const App = ({ className }) => {
                     >
                         <Icon icon="Bolt" />
                     </Button>
+                </Container>
+
+                <Text fontSize={FONT_SIZE.l}>Menu</Text>
+                <Container margin={`0 0 ${SPACING.l}`}>
+                    <Button onClick={() => { setIsMenuOpen(!isMenuOpen); }}>Menu</Button>
+                    <Menu
+                        open={isMenuOpen}
+                        options={[
+                            { label: 'Option A', onClick: () => { console.log('Optoin A clicked'); } },
+                            { label: 'Option B', onClick: () => { console.log('Optoin B clicked'); } },
+                            { label: 'Option C', onClick: () => { console.log('Optoin C clicked'); } },
+                            { label: 'Option D', onClick: () => { console.log('Optoin D clicked'); } },
+                            { label: 'Option E', onClick: () => { console.log('Optoin E clicked'); } },
+                            { label: 'Option F', onClick: () => { console.log('Optoin F clicked'); } },
+                            { label: 'Option G', onClick: () => { console.log('Optoin G clicked'); } },
+                        ]}
+                    />
                 </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Textareas</Text>

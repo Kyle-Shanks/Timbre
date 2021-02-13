@@ -34,7 +34,7 @@ const Button = ({
             variation={variation}
             {...styleProps}
         >
-            <Flex align="center">
+            <Flex justify="center" align="center">
                 {!loading && iconLeft}
                 <Label theme={theme} variation={variation}>{loading ? loadingText : children}</Label>
                 {!loading && iconRight}

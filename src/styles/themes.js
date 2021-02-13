@@ -38,6 +38,10 @@ export const THEMES = {
 
         buttonPrimaryBackground: colors.teal,
         buttonPrimaryHoverBackground: colors.tealDark,
+
+        menuBorder: shades.grey30,
+        menuBackground: shades.white,
+        menuBackgroundActive: shades.grey20,
     },
     [DARK]: {
         ...sharedColors,
@@ -66,5 +70,9 @@ export const THEMES = {
 
         buttonPrimaryBackground: colors.teal,
         buttonPrimaryHoverBackground: colors.tealLite,
+
+        menuBorder: shades.grey40,
+        menuBackground: shades.grey60,
+        menuBackgroundActive: shades.grey50,
     },
 };
