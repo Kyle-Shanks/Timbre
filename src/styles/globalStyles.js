@@ -75,7 +75,7 @@ export const GlobalStyles = createGlobalStyle`
         ${typographyStyles}
     }
 
-    input, button, select {
+    input, button, select, textarea {
         ${typographyStyles}
         outline: none;
         border: none;

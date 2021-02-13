@@ -7,6 +7,7 @@ import Checkbox from 'src/components/input/Checkbox';
 import RadioButton from 'src/components/input/RadioButton';
 import RadioGroup from 'src/components/input/RadioGroup';
 import NativeSelect from 'src/components/input/NativeSelect';
+import Textarea from 'src/components/input/Textarea';
 import TextInput from 'src/components/input/TextInput';
 import Box from 'src/components/layout/Box';
 import Container from 'src/components/layout/Container';
@@ -22,6 +23,7 @@ const App = ({ className }) => {
     const BASE_CLASS_NAME = 'App';
     const [theme, setTheme] = useState(LIGHT);
     const [text, setText] = useState('');
+    const [textareaValue, setTextareaValue] = useState('');
     const [selectValue, setSelectValue] = useState('');
     const [checkValue, setCheckValue] = useState(true);
     const [radioValue, setRadioValue] = useState(true);
@@ -156,6 +158,27 @@ const App = ({ className }) => {
                     >
                         <Icon icon="Bolt" />
                     </Button>
+                </Container>
+
+                <Text fontSize={FONT_SIZE.l}>Textareas</Text>
+                <Container margin={`0 0 ${SPACING.l}`} vGap={SPACING.s}>
+                    <Textarea
+                        value={textareaValue}
+                        onChange={(val) => setTextareaValue(val)}
+                        placeholder="Textarea placeholder..."
+                    />
+                    <Textarea
+                        disabled
+                        value={textareaValue}
+                        onChange={(val) => setTextareaValue(val)}
+                        placeholder="Textarea placeholder..."
+                    />
+                    <Textarea
+                        error
+                        value={textareaValue}
+                        onChange={(val) => setTextareaValue(val)}
+                        placeholder="Textarea placeholder..."
+                    />
                 </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Text Inputs</Text>
