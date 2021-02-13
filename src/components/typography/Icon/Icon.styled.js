@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Box from 'src/components/layout/Box';
+import { relaInline } from 'src/styles/util';
 import {
     defaultIconStrokeWidth,
     iconSizeXL,
@@ -18,6 +19,7 @@ const getSize = (size) => {
 };
 
 export const StyledComponent = styled(Box)`
+    ${relaInline}
     height: ${({ size }) => getSize(size)};
     width: ${({ size }) => getSize(size)};
     & > svg {

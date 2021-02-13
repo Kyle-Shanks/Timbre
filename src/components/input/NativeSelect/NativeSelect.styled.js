@@ -38,4 +38,5 @@ export const StyledComponent = styled(Box)`
 export const ArrowIcon = styled(Icon)`
     ${vertCenter}
     right: ${SPACING.s};
+    pointer-events: none;
 `;

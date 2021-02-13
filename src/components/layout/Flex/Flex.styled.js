@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Container from 'src/components/layout/Container';
+import Box from 'src/components/layout/Box';
 
-export const StyledComponent = styled(Container)`
+export const StyledComponent = styled(Box)`
     display: flex;
     flex-wrap: ${({ wrap }) => wrap };
     flex-direction: ${({ direction }) => direction };

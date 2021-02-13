@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import Container from 'src/components/layout/Container';
 import RadioButton from 'src/components/input/RadioButton';
-import { StyledComponent } from './RadioGroup.styled';
+import { SPACING } from 'src/styles/constants';
 
 const RadioGroup = ({
     className,
@@ -16,8 +17,9 @@ const RadioGroup = ({
     useEffect(() => { onChange(selectedOption) }, [selectedOption]);
 
     return (
-        <StyledComponent
+        <Container
             className={`${BASE_CLASS_NAME} ${className}`.trim()}
+            hGap={SPACING.m}
             {...styleProps}
         >
             {options.map(opt => (
@@ -31,7 +33,7 @@ const RadioGroup = ({
                     {opt.label}
                 </RadioButton>
             ))}
-        </StyledComponent>
+        </Container>
     );
 };
 

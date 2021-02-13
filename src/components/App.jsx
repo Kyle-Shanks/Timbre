@@ -37,7 +37,6 @@ const App = ({ className }) => {
             <Container
                 className={`${BASE_CLASS_NAME} ${className}`.trim()}
                 padding={containerPadM}
-                margin="0 auto"
             >
                 <Container margin={`0 0 ${SPACING.l}`}>
                     <Header tag="h1">Hello, world!</Header>
@@ -59,20 +58,17 @@ const App = ({ className }) => {
                 <Text fontSize={FONT_SIZE.xl}>Bigger Text</Text>
                 <Text fontSize={FONT_SIZE.xxl} margin={`0 0 ${SPACING.l}`}>Biggest Text</Text>
 
-                <Container margin={`0 0 ${SPACING.l}`}>
-                    <Text fontSize={FONT_SIZE.l}>Icons</Text>
-                    <Flex align="center">
-                        <Icon display="inline-block" size="xl" icon="Bolt" />
-                        <Icon display="inline-block" size="l" icon="Bolt" />
-                        <Icon display="inline-block" size="m" icon="Bolt" />
-                        <Icon display="inline-block" size="s" icon="Bolt" />
-                    </Flex>
+                <Text fontSize={FONT_SIZE.l}>Icons</Text>
+                <Container margin={`0 0 ${SPACING.l}`} hGap={SPACING.s}>
+                    <Icon size="xl" icon="Bolt" />
+                    <Icon size="l" icon="Bolt" />
+                    <Icon size="m" icon="Bolt" />
+                    <Icon size="s" icon="Bolt" />
                 </Container>
 
-                <Container margin={`0 0 ${SPACING.l}`}>
-                    <Text fontSize={FONT_SIZE.l}>Checkboxes</Text>
+                <Text fontSize={FONT_SIZE.l}>Checkboxes</Text>
+                <Container margin={`0 0 ${SPACING.l}`} hGap={SPACING.m}>
                     <Checkbox
-                        margin={`0 ${SPACING.m} 0 0`}
                         checked={checkValue}
                         onChange={(val) => setCheckValue(val)}
                     >
@@ -87,10 +83,9 @@ const App = ({ className }) => {
                     </Checkbox>
                 </Container>
 
-                <Container margin={`0 0 ${SPACING.l}`}>
-                    <Text fontSize={FONT_SIZE.l}>Radio Buttons</Text>
+                <Text fontSize={FONT_SIZE.l}>Radio Buttons</Text>
+                <Container margin={`0 0 ${SPACING.l}`} hGap={SPACING.m}>
                     <RadioButton
-                        margin={`0 ${SPACING.m} 0 0`}
                         checked={radioValue}
                         onClick={() => setRadioValue(!radioValue)}
                         value="1"
@@ -121,69 +116,49 @@ const App = ({ className }) => {
                     />
                 </Container>
 
-                <Button
-                    size="l"
-                    margin={`0 0 ${SPACING.s}`}
-                    onClick={toggleTheme}
-                >
-                    Toggle Theme
-                </Button>
-                <Button
-                    size="m"
-                    margin={`0 0 ${SPACING.s}`}
-                    onClick={toggleTheme}
-                >
-                    Toggle Theme
-                </Button>
-                <Button
-                    size="s"
-                    margin={`0 0 ${SPACING.s}`}
-                    onClick={toggleTheme}
-                >
-                    Toggle Theme
-                </Button>
-                <Button
-                    size="icon"
-                    margin={`0 0 ${SPACING.l}`}
-                    onClick={toggleTheme}
-                >
-                    <Icon icon="Bolt" />
-                </Button>
+                <Text fontSize={FONT_SIZE.l}>Buttons</Text>
+                <Container margin={`0 0 ${SPACING.s}`} hGap={SPACING.s}>
+                    <Button size="l" onClick={toggleTheme}>Toggle Theme</Button>
+                    <Button size="m" onClick={toggleTheme}>Toggle Theme</Button>
+                    <Button size="s" onClick={toggleTheme}>Toggle Theme</Button>
+                    <Button size="icon" onClick={toggleTheme}>
+                        <Icon icon="Bolt" />
+                    </Button>
+                </Container>
+                <Container margin={`0 0 ${SPACING.s}`} hGap={SPACING.s}>
+                    <Button
+                        variation="secondary"
+                        iconLeft={<Icon icon="Bolt" />}
+                        onClick={toggleTheme}
+                    >
+                        Toggle Theme
+                    </Button>
+                    <Button
+                        variation="secondary"
+                        size="icon"
+                        onClick={toggleTheme}
+                    >
+                        <Icon icon="Bolt" />
+                    </Button>
+                </Container>
+                <Container margin={`0 0 ${SPACING.l}`} hGap={SPACING.s}>
+                    <Button
+                        variation="tertiary"
+                        iconLeft={<Icon icon="Bolt" />}
+                        onClick={toggleTheme}
+                    >
+                        Toggle Theme
+                    </Button>
+                    <Button
+                        variation="tertiary"
+                        size="icon"
+                        onClick={toggleTheme}
+                    >
+                        <Icon icon="Bolt" />
+                    </Button>
+                </Container>
 
-                <Button
-                    variation="secondary"
-                    iconLeft={<Icon icon="Bolt" />}
-                    margin={`0 0 ${SPACING.s}`}
-                    onClick={toggleTheme}
-                >
-                    Toggle Theme
-                </Button>
-                <Button
-                    variation="secondary"
-                    size="icon"
-                    margin={`0 0 ${SPACING.l}`}
-                    onClick={toggleTheme}
-                >
-                    <Icon icon="Bolt" />
-                </Button>
-
-                <Button
-                    variation="tertiary"
-                    iconLeft={<Icon icon="Bolt" />}
-                    margin={`0 0 ${SPACING.s}`}
-                    onClick={toggleTheme}
-                >
-                    Toggle Theme
-                </Button>
-                <Button
-                    variation="tertiary"
-                    size="icon"
-                    margin={`0 0 ${SPACING.l}`}
-                    onClick={toggleTheme}
-                >
-                    <Icon icon="Bolt" />
-                </Button>
-
+                <Text fontSize={FONT_SIZE.l}>Text Inputs</Text>
                 <Flex>
                     <Box>
                         <TextInput
@@ -284,7 +259,7 @@ const App = ({ className }) => {
                 />
                 <NativeSelect
                     error
-                    margin={'0 0 4rem'}
+                    margin={`0 0 ${SPACING.xxl}`}
                     w="34rem"
                     onChange={handleSelectChange}
                     placeholder="Select an option..."

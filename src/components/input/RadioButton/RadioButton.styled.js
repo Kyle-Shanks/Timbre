@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import Box from 'src/components/layout/Box';
+import { relaInline } from 'src/styles/util';
 import { SPACING, defaultCheckboxSize } from 'src/styles/constants';
 
 export const StyledComponent = styled(Box)`
-    display: inline-block;
+    ${relaInline}
     color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
     user-select: ${({ disabled }) => disabled ? 'none' : 'auto'};
     cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};

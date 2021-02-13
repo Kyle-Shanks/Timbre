@@ -19,9 +19,9 @@ export const THEMES = {
 
         textPrimary: shades.grey70,
         textSecondary: shades.grey50,
-        textDisabled: shades.grey30,
+        textDisabled: shades.grey40,
         textPlaceholder: shades.grey40,
-        textDisabledPlaceholder: shades.grey20,
+        textDisabledPlaceholder: shades.grey30,
 
         filledInputBackground: shades.grey10,
         filledInputHoverBackground: shades.grey20,
@@ -47,9 +47,9 @@ export const THEMES = {
 
         textPrimary: shades.grey10,
         textSecondary: shades.grey40,
-        textDisabled: shades.grey60,
+        textDisabled: shades.grey50,
         textPlaceholder: shades.grey50,
-        textDisabledPlaceholder: shades.grey70,
+        textDisabledPlaceholder: shades.grey60,
 
         filledInputBackground: shades.grey70,
         filledInputHoverBackground: shades.grey60,

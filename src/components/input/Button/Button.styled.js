@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Box from 'src/components/layout/Box';
+import { relaInline } from 'src/styles/util';
 import {
     SPACING,
     FONT_SIZE,
@@ -53,6 +54,8 @@ const getColor = ({ theme, variation }) => {
 };
 
 export const StyledComponent = styled(Box)`
+    ${relaInline}
+    vertical-align: middle;
     cursor: pointer;
     min-width: ${({ size }) => size === 'icon' ? '0rem' : `6rem`};
     padding: ${(props) => getPadding(props)};

@@ -66,6 +66,7 @@ export const GlobalStyles = createGlobalStyle`
     * {
         box-sizing: border-box;
         transition: ${defaultTransition};
+        vertical-align: middle;
     }
 
     body {
