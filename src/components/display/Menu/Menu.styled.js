@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Box from 'src/components/layout/Box';
 import Text from 'src/components/typography/Text';
-import { SPACING, borderWidth, borderRadiusM } from 'src/styles/constants';
+import { SPACING, Z_INDEX, borderWidth, borderRadiusM } from 'src/styles/constants';
 
 export const StyledComponent = styled(Box)`
-    z-index: 10;
+    z-index: ${Z_INDEX.menu};
     position: absolute;
     top: calc(100% + ${SPACING.s});
     max-height: 12rem;

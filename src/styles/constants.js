@@ -52,6 +52,16 @@ export const iconSizeM = size24;
 export const iconSizeS = size16;
 export const defaultIconStrokeWidth = 2;
 
+export const Z_INDEX = {
+    behind: -1,
+    normal: 1,
+    display: 10,
+    menu: 20,
+    overlay: 30,
+    modal: 40,
+    toast: 50,
+};
+
 // Typography constants
 export const FONT_SIZE = {
     xxs: size10,

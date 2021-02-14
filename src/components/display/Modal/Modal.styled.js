@@ -3,7 +3,7 @@ import Box from 'src/components/layout/Box';
 import Flex from 'src/components/layout/Flex';
 import Button from 'src/components/input/Button';
 import { absCenter, vertCenter, fixedFill, relaBlock } from 'src/styles/util';
-import { SPACING, borderWidth, borderRadiusM } from 'src/styles/constants';
+import { SPACING, Z_INDEX, borderWidth, borderRadiusM } from 'src/styles/constants';
 
 const modalSizeMap = {
     l: '75vw',
@@ -12,14 +12,14 @@ const modalSizeMap = {
 };
 
 export const ModalOverlay = styled(Box)`
-    z-index: 20;
+    z-index: ${Z_INDEX.overlay};
     ${fixedFill}
     background-color: ${({ open }) => open ? 'rgba(0,0,0,0.4)' : 'rgba(0,0,0,0)'};
     pointer-events: ${({ open }) => open ? 'all' : 'none'};
 `;
 
 export const ModalContainer = styled(Box)`
-    z-index: 20;
+    z-index: ${Z_INDEX.modal};
     ${absCenter}
     min-width: 30rem;
     width: ${({ size }) => modalSizeMap[size]};
