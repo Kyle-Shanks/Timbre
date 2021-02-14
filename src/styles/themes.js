@@ -71,8 +71,8 @@ export const THEMES = {
         buttonPrimaryBackground: colors.teal,
         buttonPrimaryHoverBackground: colors.tealLite,
 
-        displayBorder: shades.grey40,
-        displayBackground: shades.grey60,
-        displayBackgroundActive: shades.grey50,
+        displayBorder: shades.grey50,
+        displayBackground: shades.grey70,
+        displayBackgroundActive: shades.grey60,
     },
 };

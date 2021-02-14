@@ -8,6 +8,7 @@ import Button from 'src/components/input/Button';
 import Checkbox from 'src/components/input/Checkbox';
 import RadioButton from 'src/components/input/RadioButton';
 import RadioGroup from 'src/components/input/RadioGroup';
+import Switch from 'src/components/input/Switch';
 import NativeSelect from 'src/components/input/NativeSelect';
 import Textarea from 'src/components/input/Textarea';
 import TextInput from 'src/components/input/TextInput';
@@ -27,6 +28,7 @@ const App = ({ className }) => {
     const [text, setText] = useState('');
     const [textareaValue, setTextareaValue] = useState('');
     const [selectValue, setSelectValue] = useState('');
+    const [switchValue, setSwitchValue] = useState(false);
     const [checkValue, setCheckValue] = useState(true);
     const [radioValue, setRadioValue] = useState(true);
     const [radioGroupValue, setRadioGroupValue] = useState('');
@@ -96,8 +98,34 @@ const App = ({ className }) => {
                     <Icon icon="X" />
                 </Container>
 
+                <Text fontSize={FONT_SIZE.l}>Switch</Text>
+                <Container margin={`0 0 ${SPACING.l}`} hGap={SPACING.s}>
+                    <Switch
+                        variation="outline"
+                        value={switchValue}
+                        onChange={(val) => setSwitchValue(val)}
+                    />
+                    <Switch
+                        variation="filled"
+                        value={switchValue}
+                        onChange={(val) => setSwitchValue(val)}
+                    />
+                    <Switch
+                        disabled
+                        variation="outline"
+                        value={switchValue}
+                        onChange={(val) => setSwitchValue(val)}
+                    />
+                    <Switch
+                        disabled
+                        variation="filled"
+                        value={switchValue}
+                        onChange={(val) => setSwitchValue(val)}
+                    />
+                </Container>
+
                 <Text fontSize={FONT_SIZE.l}>Card</Text>
-                <Card padding={SPACING.l} margin={`0 0 ${SPACING.l}`}>
+                <Card margin={`0 0 ${SPACING.l}`}>
                     <Header tag="h3" margin={`0 0 ${SPACING.m}`}>Card Header</Header>
                     <Text>Card Content</Text>
                     <Text>Card Content</Text>
