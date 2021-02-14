@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Flex from 'src/components/layout/Flex'
-import { StyledComponent, CheckboxSvg } from './Checkbox.styled';
+import { StyledComponent, CheckboxSvg, Label } from './Checkbox.styled';
 
 const Checkbox = ({
     className,
@@ -37,7 +37,9 @@ const Checkbox = ({
                     <rect x="3" y="1.5" width="54" height="54" rx="8" />
                     <path d="M 18.6 31 L 25.7 37.5 L 42.4 20" />
                 </CheckboxSvg>
-                {children}
+                <Label disabled={disabled} theme={theme}>
+                    {children}
+                </Label>
             </Flex>
         </StyledComponent>
     );

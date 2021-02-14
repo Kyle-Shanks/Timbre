@@ -8,7 +8,6 @@ export const StyledComponent = styled(Box)`
     color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
     user-select: ${({ disabled }) => disabled ? 'none' : 'auto'};
     cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
-    text-decoration: ${({ disabled }) => disabled ? 'line-through' : 'none'};
 `;
 
 export const RadioSvg = styled(Box)`
@@ -20,11 +19,16 @@ export const RadioSvg = styled(Box)`
     & > .outline {
         fill: none;
         stroke: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
-        stroke-width: 5;
+        stroke-width: 8;
     }
 
     & > .fill {
         fill: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
         stroke: none;
     }
+`;
+
+export const Label = styled(Box)`
+    color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
+    text-decoration: ${({ disabled }) => disabled ? 'line-through' : 'none'};
 `;

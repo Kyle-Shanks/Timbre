@@ -13,7 +13,6 @@ export const StyledComponent = styled(Box)`
     color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
     user-select: ${({ disabled }) => disabled ? 'none' : 'auto'};
     cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
-    text-decoration: ${({ disabled }) => disabled ? 'line-through' : 'none'};
 `;
 
 export const CheckboxSvg = styled(Box)`
@@ -31,4 +30,9 @@ export const CheckboxSvg = styled(Box)`
         fill: ${(props) => getSvgFill(props)};
         stroke: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
     }
+`;
+
+export const Label = styled(Box)`
+    color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
+    text-decoration: ${({ disabled }) => disabled ? 'line-through' : 'none'};
 `;

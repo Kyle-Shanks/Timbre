@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
+import Card from 'src/components/display/Card';
 import Menu from 'src/components/display/Menu';
 import Button from 'src/components/input/Button';
 import Checkbox from 'src/components/input/Checkbox';
@@ -94,6 +95,14 @@ const App = ({ className }) => {
                     <Icon icon="Upload" />
                     <Icon icon="X" />
                 </Container>
+
+                <Text fontSize={FONT_SIZE.l}>Card</Text>
+                <Card padding={SPACING.l} margin={`0 0 ${SPACING.l}`}>
+                    <Header tag="h3">Card Header</Header>
+                    <Text>Card Content</Text>
+                    <Text>Card Content</Text>
+                    <Text>Card Content</Text>
+                </Card>
 
                 <Text fontSize={FONT_SIZE.l}>Checkboxes</Text>
                 <Container margin={`0 0 ${SPACING.l}`} hGap={SPACING.m}>
@@ -189,7 +198,9 @@ const App = ({ className }) => {
 
                 <Text fontSize={FONT_SIZE.l}>Menu</Text>
                 <Container margin={`0 0 ${SPACING.l}`}>
-                    <Button onClick={() => { setIsMenuOpen(!isMenuOpen); }}>Menu</Button>
+                    <Button variation="secondary" onClick={() => { setIsMenuOpen(!isMenuOpen); }}>
+                        Menu
+                    </Button>
                     <Menu
                         open={isMenuOpen}
                         options={[

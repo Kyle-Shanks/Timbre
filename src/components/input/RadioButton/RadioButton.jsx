@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Flex from 'src/components/layout/Flex';
-import { StyledComponent, RadioSvg } from './RadioButton.styled';
+import { StyledComponent, RadioSvg, Label } from './RadioButton.styled';
 
 const RadioButton = ({
     className,
@@ -37,7 +37,9 @@ const RadioButton = ({
                     <circle className="outline" cx="30" cy="30" r="25" />
                     <circle className="fill" cx="30" cy="30" r={checked ? "14" : "0"} />
                 </RadioSvg>
-                {children}
+                <Label disabled={disabled} theme={theme}>
+                    {children}
+                </Label>
             </Flex>
         </StyledComponent>
     );
