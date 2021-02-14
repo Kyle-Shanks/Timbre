@@ -16,7 +16,7 @@ export const StyledComponent = styled(Box)`
     min-width: 20rem;
     padding: ${SPACING.s} ${SPACING.m};
     color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
-    background-color: ${({ theme }) => theme.background};
+    background-color: transparent;
     border: ${(props) => getBorder(props)};
     border-radius: ${borderRadiusS};
     cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'auto'};

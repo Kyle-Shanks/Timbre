@@ -9,7 +9,7 @@ export const StyledComponent = styled(Box)`
     min-width: 16rem;
     padding: ${SPACING.s} ${SPACING.l} ${SPACING.s} ${SPACING.m};
     color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
-    background-color: ${({ theme }) => theme.background};
+    background-color: transparent;
     border: ${({ theme, disabled, error }) => {
         if (error) return `${borderWidth} solid ${theme.error}`;
         return `${borderWidth} solid ${disabled ? theme.borderDisabled : theme.border}`;

@@ -29,7 +29,7 @@ export const THEMES = {
 
         border: shades.grey40,
         borderDisabled: shades.grey20,
-        borderHover: shades.grey50,
+        borderHover: shades.grey60,
         borderActive: colors.blue,
 
         icon: shades.grey40,
@@ -61,7 +61,7 @@ export const THEMES = {
 
         border: shades.grey50,
         borderDisabled: shades.grey60,
-        borderHover: shades.grey40,
+        borderHover: shades.grey30,
         borderActive: colors.blue,
 
         icon: shades.grey50,

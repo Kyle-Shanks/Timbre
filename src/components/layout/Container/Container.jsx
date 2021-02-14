@@ -18,8 +18,6 @@ Container.propTypes = {
     className: PropTypes.string,
 
     // Style Props
-    hGap: PropTypes.string,
-    vGap: PropTypes.string,
     fullWidth: PropTypes.bool,
 };
 
@@ -28,8 +26,6 @@ Container.defaultProps = {
     className: '',
 
     // Style Props
-    hGap: '0rem',
-    vGap: '0rem',
     fullWidth: false,
 };
 

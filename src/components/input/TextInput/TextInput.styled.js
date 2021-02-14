@@ -7,7 +7,7 @@ const getBackgroundColor = ({ theme, variation, disabled }) => {
     if (variation === 'filled') {
         return disabled ? theme.filledInputDisabledBackground : theme.filledInputBackground;
     }
-    return theme.background;
+    return 'transparent';
 };
 
 const getBorderColor = ({ theme, disabled, error, variation }) => {
@@ -23,7 +23,7 @@ const getHoverBackgroundColor = ({ theme, variation, disabled }) => {
     if (variation === 'filled') {
         return (disabled ? theme.filledInputDisabledBackground : theme.filledInputHoverBackground);
     }
-    return theme.background;
+    return 'transparent';
 };
 
 const getHoverBorderColor = ({ theme, disabled, error, variation }) => {
@@ -55,7 +55,7 @@ export const StyledComponent = styled(Box)`
     }
 
     &:focus {
-        background-color: ${({ theme }) => theme.background};
+        background-color: transparent;
         border: ${({ theme, error }) => `${borderWidth} solid ${error ? theme.error : theme.borderActive}`};
         box-shadow: 0 0 0 1px ${({ theme, error }) => (error ? theme.error : theme.borderActive)};
     }

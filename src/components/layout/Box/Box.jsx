@@ -28,6 +28,8 @@ Box.propTypes = {
     margin: PropTypes.string,
     padding: PropTypes.string,
     fontSize: PropTypes.string,
+    hGap: PropTypes.string,
+    vGap: PropTypes.string,
 };
 
 Box.defaultProps = {
@@ -42,6 +44,8 @@ Box.defaultProps = {
     margin: '',
     padding: '',
     fontSize: '',
+    hGap: '0rem',
+    vGap: '0rem',
 };
 
 export default Box;

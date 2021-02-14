@@ -27,7 +27,7 @@ const getFontSize = ({ size }) => {
 };
 
 const getBackgroundColor = ({ theme, variation }) => {
-    return variation === 'primary' ? theme.buttonPrimaryBackground : theme.background;
+    return variation === 'primary' ? theme.buttonPrimaryBackground : 'transparent';
 };
 
 const getHoverBackgroundColor = ({ theme, variation }) => {

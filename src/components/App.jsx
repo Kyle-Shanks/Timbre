@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import Card from 'src/components/display/Card';
 import Menu from 'src/components/display/Menu';
+import Modal from 'src/components/display/Modal';
 import Button from 'src/components/input/Button';
 import Checkbox from 'src/components/input/Checkbox';
 import RadioButton from 'src/components/input/RadioButton';
@@ -33,6 +34,7 @@ const App = ({ className }) => {
     const [radioValue, setRadioValue] = useState(true);
     const [radioGroupValue, setRadioGroupValue] = useState('');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const toggleTheme = () => (theme === LIGHT ? setTheme(DARK) : setTheme(LIGHT));
     const handleTextChange = (val) => setText(val);
@@ -222,6 +224,32 @@ const App = ({ className }) => {
                     >
                         <Icon icon="Bolt" />
                     </Button>
+                </Container>
+
+                <Text fontSize={FONT_SIZE.l}>Modal</Text>
+                <Container margin={`0 0 ${SPACING.l}`}>
+                    <Button
+                        variation="secondary"
+                        onClick={() => { setIsModalOpen(true); }}
+                    >
+                        Modal
+                    </Button>
+                    <Modal
+                        open={isModalOpen}
+                        onClose={() => { setIsModalOpen(false); }}
+                        header={<Header tag="h3">Modal</Header>}
+                        footer={(
+                            <Box hGap={SPACING.m}>
+                                <Button variation="secondary">Action</Button>
+                                <Button>Action</Button>
+                            </Box>
+                        )}
+                    >
+                        <Header tag="h3" margin={`0 0 ${SPACING.m}`}>Modal Header</Header>
+                        <Text>Modal Content</Text>
+                        <Text>Modal Content</Text>
+                        <Text>Modal Content</Text>
+                    </Modal>
                 </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Menu</Text>
