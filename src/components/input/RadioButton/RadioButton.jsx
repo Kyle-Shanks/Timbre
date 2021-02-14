@@ -35,7 +35,7 @@ const RadioButton = ({
                     theme={theme}
                 >
                     <circle className="outline" cx="30" cy="30" r="25" />
-                    <circle className="fill" cx="30" cy="30" r={checked ? "14" : "0"} />
+                    <circle className="fill" cx="30" cy="30" r={checked ? "12.5" : "0"} />
                 </RadioSvg>
                 <Label disabled={disabled} theme={theme}>
                     {children}

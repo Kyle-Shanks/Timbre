@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Box from 'src/components/layout/Box';
+import Flex from 'src/components/layout/Flex';
 import { relaInline } from 'src/styles/util';
 import {
     SPACING,
@@ -77,7 +78,7 @@ export const StyledComponent = styled(Box)`
     }
 `;
 
-export const Label = styled(Box)`
+export const Label = styled(Flex)`
     color: ${(props) => getColor(props)};
     padding: ${SPACING.xs};
 `;

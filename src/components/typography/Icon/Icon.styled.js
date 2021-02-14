@@ -24,5 +24,6 @@ export const StyledComponent = styled(Box)`
     width: ${({ size }) => getSize(size)};
     & > svg {
         stroke-width: ${defaultIconStrokeWidth};
+        vertical-align: baseline;
     }
 `;

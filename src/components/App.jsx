@@ -98,7 +98,7 @@ const App = ({ className }) => {
 
                 <Text fontSize={FONT_SIZE.l}>Card</Text>
                 <Card padding={SPACING.l} margin={`0 0 ${SPACING.l}`}>
-                    <Header tag="h3">Card Header</Header>
+                    <Header tag="h3" margin={`0 0 ${SPACING.m}`}>Card Header</Header>
                     <Text>Card Content</Text>
                     <Text>Card Content</Text>
                     <Text>Card Content</Text>
@@ -198,7 +198,11 @@ const App = ({ className }) => {
 
                 <Text fontSize={FONT_SIZE.l}>Menu</Text>
                 <Container margin={`0 0 ${SPACING.l}`}>
-                    <Button variation="secondary" onClick={() => { setIsMenuOpen(!isMenuOpen); }}>
+                    <Button
+                        variation="secondary"
+                        onClick={() => { setIsMenuOpen(!isMenuOpen); }}
+                        iconRight={<Icon size="s" icon="ChevronDown" />}
+                    >
                         Menu
                     </Button>
                     <Menu
@@ -304,6 +308,7 @@ const App = ({ className }) => {
                     w="34rem"
                 />
 
+                <Text fontSize={FONT_SIZE.l}>Native Selects</Text>
                 <NativeSelect
                     margin={`0 0 ${SPACING.s}`}
                     w="34rem"

@@ -4,7 +4,7 @@ import { MenuItem, StyledComponent } from './Menu.styled';
 
 // TODO: Should add close on click outside
 // TODO: Add handler for then parent is close to the bottom to more menu position to above
-// TODO: Convert to accept children instead of options object?
+// TODO: Convert to accept children (MenuHeader, MenuItem, and MenuDivider) instead of options object?
 
 const Menu = ({ className, open, options, ...styleProps }) => {
     const BASE_CLASS_NAME = 'Menu';
