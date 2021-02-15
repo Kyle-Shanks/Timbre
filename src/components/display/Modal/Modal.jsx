@@ -12,11 +12,24 @@ import {
 
 const SIZE = ['l', 'm', 's'];
 
-const Modal = ({ className, children, footer, header, onClose, open, size, ...styleProps }) => {
+const Modal = ({
+    className,
+    children,
+    closeOnOutsideClick,
+    displayCloseButton,
+    onClose,
+    open,
+    size,
+    ...styleProps
+}) => {
     const BASE_CLASS_NAME = 'Modal';
 
     return (
-        <ModalOverlay className={`${BASE_CLASS_NAME}__overlay`} open={open} onClick={onClose}>
+        <ModalOverlay
+            className={`${BASE_CLASS_NAME}__overlay`}
+            open={open}
+            onClick={() => { if (closeOnOutsideClick) onClose(); }}
+        >
             <ModalContainer
                 className={`${BASE_CLASS_NAME} ${className}`.trim()}
                 open={open}
@@ -24,19 +37,11 @@ const Modal = ({ className, children, footer, header, onClose, open, size, ...st
                 onClick={(e) => e.stopPropagation()}
                 {...styleProps}
             >
-                {header && (
-                    <ModalHeader justify="center" align="center">
-                        {header}
-                        <CloseButton onClick={onClose} variation="tertiary" size="icon">
-                            <Icon icon="X" />
-                        </CloseButton>
-                    </ModalHeader>
-                )}
-                <ModalContent>
-                    {children}
-                </ModalContent>
-                {footer && (
-                    <ModalFooter justify="flex-end" align="center" margin={'0'}>{footer}</ModalFooter>
+                {children}
+                {displayCloseButton && (
+                    <CloseButton onClick={onClose} variation="tertiary" size="icon">
+                        <Icon icon="X" />
+                    </CloseButton>
                 )}
             </ModalContainer>
         </ModalOverlay>
@@ -46,6 +51,8 @@ const Modal = ({ className, children, footer, header, onClose, open, size, ...st
 Modal.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
+    closeOnOutsideClick: PropTypes.bool,
+    displayCloseButton: PropTypes.bool,
     onClose: PropTypes.func.isRequired,
     open: PropTypes.bool,
     size: PropTypes.oneOf(SIZE),
@@ -54,6 +61,8 @@ Modal.propTypes = {
 Modal.defaultProps = {
     className: '',
     children: null,
+    closeOnOutsideClick: true,
+    displayCloseButton: true,
     open: false,
     size: SIZE[1],
 };

@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import Card from 'src/components/display/Card';
 import Menu from 'src/components/display/Menu';
-import Modal from 'src/components/display/Modal';
+import Modal, { ModalHeader, ModalContent, ModalFooter } from 'src/components/display/Modal';
 import Button from 'src/components/input/Button';
 import Checkbox from 'src/components/input/Checkbox';
 import RadioButton from 'src/components/input/RadioButton';
@@ -237,18 +237,24 @@ const App = ({ className }) => {
                     <Modal
                         open={isModalOpen}
                         onClose={() => { setIsModalOpen(false); }}
-                        header={<Header tag="h3">Modal</Header>}
-                        footer={(
-                            <Box hGap={SPACING.m}>
-                                <Button variation="secondary">Action</Button>
-                                <Button>Action</Button>
-                            </Box>
-                        )}
                     >
-                        <Header tag="h3" margin={`0 0 ${SPACING.m}`}>Modal Header</Header>
-                        <Text>Modal Content</Text>
-                        <Text>Modal Content</Text>
-                        <Text>Modal Content</Text>
+                        <ModalHeader>
+                            <Flex justify="center">
+                                <Header tag="h3">Modal</Header>
+                            </Flex>
+                        </ModalHeader>
+                        <ModalContent>
+                            <Header tag="h3" margin={`0 0 ${SPACING.m}`}>Modal Header</Header>
+                            <Text>Modal Content</Text>
+                            <Text>Modal Content</Text>
+                            <Text>Modal Content</Text>
+                        </ModalContent>
+                        <ModalFooter>
+                            <Flex hGap={SPACING.m} justify="flex-end">
+                                <Button variation="secondary">Other Action</Button>
+                                <Button onClick={toggleTheme}>Toggle</Button>
+                            </Flex>
+                        </ModalFooter>
                     </Modal>
                 </Container>
 

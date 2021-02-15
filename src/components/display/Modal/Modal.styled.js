@@ -34,15 +34,16 @@ export const ModalContainer = styled(Box)`
     }
 `;
 
-export const ModalHeader = styled(Flex)`
-    height: 6rem;
-    padding: 0 ${SPACING.xl};
-    border-bottom: ${borderWidth} solid ${({ theme }) => theme.border};
+export const CloseButton = styled(Button)`
+    position: absolute;
+    top: ${SPACING.m};
+    right: ${SPACING.m};
 `;
 
-export const CloseButton = styled(Button)`
-    ${vertCenter}
-    right: ${SPACING.l};
+export const ModalHeader = styled(Box)`
+    min-height: 5rem;
+    padding: ${SPACING.m} ${SPACING.xl};
+    border-bottom: ${borderWidth} solid ${({ theme }) => theme.border};
 `;
 
 export const ModalContent = styled(Box)`
@@ -53,8 +54,8 @@ export const ModalContent = styled(Box)`
     overflow: auto;
 `;
 
-export const ModalFooter = styled(Flex)`
-    height: 5rem;
-    padding: 0 ${SPACING.xl};
+export const ModalFooter = styled(Box)`
+    min-height: 5rem;
+    padding: ${SPACING.m} ${SPACING.xl};
     border-top: ${borderWidth} solid ${({ theme }) => theme.border};
 `;
