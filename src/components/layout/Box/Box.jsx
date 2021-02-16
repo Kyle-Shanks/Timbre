@@ -9,6 +9,7 @@ const Box = React.forwardRef(({ className, children, tag: Tag, ...styleProps }, 
         <StyledComponent
             className={`${BASE_CLASS_NAME} ${className}`.trim()}
             as={Tag}
+            ref={ref}
             {...styleProps}
         >
             {children}

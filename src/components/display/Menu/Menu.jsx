@@ -2,33 +2,31 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { MenuItem, StyledComponent } from './Menu.styled';
 
-// TODO: Should add close on click outside
 // TODO: Add handler for then parent is close to the bottom to more menu position to above
 // TODO: Convert to accept children (MenuHeader, MenuItem, and MenuDivider) instead of options object?
+// TODO: Need to add icon support for items
 
 const Menu = ({ className, onClose, open, options, ...styleProps }) => {
     const BASE_CLASS_NAME = 'Menu';
 
-    // TODO: Fix this
     // Handling closing the dropdown when clicking outside of the component
-    // const containerRef = useRef();
-    // const handleClick = e => {
-    //     console.log({ containerRef });
-    //     if (document.contains(e.target) && !containerRef.current.contains(e.target)) {
-    //         onClose();
-    //     }
-    // };
+    const containerRef = useRef();
+    const handleClick = e => {
+        if (open && document.contains(e.target) && !containerRef.current.contains(e.target)) {
+            onClose();
+        }
+    };
 
-    // useEffect(() => {
-    //     document.addEventListener("click", handleClick);
-    //     return () => document.removeEventListener("click", handleClick);
-    // }, []);
+    useEffect(() => {
+        document.addEventListener("click", handleClick);
+        return () => document.removeEventListener("click", handleClick);
+    }, [open]);
 
     return (
         <StyledComponent
             className={`${BASE_CLASS_NAME} ${className}`.trim()}
             open={open}
-            // ref={containerRef}
+            ref={containerRef}
             {...styleProps}
         >
             {options.map((opt) => (
