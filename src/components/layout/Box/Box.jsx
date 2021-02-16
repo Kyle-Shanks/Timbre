@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledComponent } from './Box.styled';
 
-const Box = ({ className, children, tag: Tag, ...styleProps }) => {
+const Box = React.forwardRef(({ className, children, tag: Tag, ...styleProps }, ref) => {
     const BASE_CLASS_NAME = 'Box';
 
     return (
@@ -14,7 +14,7 @@ const Box = ({ className, children, tag: Tag, ...styleProps }) => {
             {children}
         </StyledComponent>
     );
-};
+});
 
 Box.propTypes = {
     children: PropTypes.node,

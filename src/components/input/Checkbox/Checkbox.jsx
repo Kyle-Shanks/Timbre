@@ -9,7 +9,6 @@ const Checkbox = ({
     children,
     disabled,
     onChange,
-    theme,
     ...styleProps
 }) => {
     const BASE_CLASS_NAME = 'Checkbox';
@@ -22,7 +21,6 @@ const Checkbox = ({
         <StyledComponent
             className={`${BASE_CLASS_NAME} ${className}`.trim()}
             disabled={disabled}
-            theme={theme}
             onClick={handleClick}
             {...styleProps}
         >
@@ -32,14 +30,11 @@ const Checkbox = ({
                     viewBox="0 0 60 60"
                     checked={checked}
                     disabled={disabled}
-                    theme={theme}
                 >
                     <rect x="3" y="1.5" width="54" height="54" rx="8" />
                     <path d="M 18.6 31 L 25.7 37.5 L 42.4 20" />
                 </CheckboxSvg>
-                <Label disabled={disabled} theme={theme}>
-                    {children}
-                </Label>
+                <Label disabled={disabled}>{children}</Label>
             </Flex>
         </StyledComponent>
     );

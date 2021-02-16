@@ -11,6 +11,7 @@ import RadioButton from 'src/components/input/RadioButton';
 import RadioGroup from 'src/components/input/RadioGroup';
 import Switch from 'src/components/input/Switch';
 import NativeSelect from 'src/components/input/NativeSelect';
+import Select from 'src/components/input/Select';
 import Textarea from 'src/components/input/Textarea';
 import TextInput from 'src/components/input/TextInput';
 import Box from 'src/components/layout/Box';
@@ -269,12 +270,13 @@ const App = ({ className }) => {
                     </Button>
                     <Menu
                         open={isMenuOpen}
+                        onClose={() => { setIsMenuOpen(false) }}
                         options={[
                             { label: 'Option A', onClick: () => { console.log('Optoin A clicked'); } },
                             { label: 'Option B', onClick: () => { console.log('Optoin B clicked'); } },
                             { label: 'Option C', onClick: () => { console.log('Optoin C clicked'); } },
                             { label: 'Option D', onClick: () => { console.log('Optoin D clicked'); } },
-                            { label: 'Option E', onClick: () => { console.log('Optoin E clicked'); } },
+                            { disabled: true, label: 'Option E', onClick: () => { console.log('Optoin E clicked'); } },
                             { label: 'Option F', onClick: () => { console.log('Optoin F clicked'); } },
                             { label: 'Option G', onClick: () => { console.log('Optoin G clicked'); } },
                         ]}
@@ -303,72 +305,83 @@ const App = ({ className }) => {
                 </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Text Inputs</Text>
-                <Flex>
-                    <Box>
-                        <TextInput
-                            margin={`0 0 ${SPACING.s}`}
-                            value={text}
-                            placeholder="Enter the beans here..."
-                            onChange={handleTextChange}
-                        />
-                        <TextInput
-                            disabled
-                            margin={`0 0 ${SPACING.s}`}
-                            value={text}
-                            placeholder="Enter the beans here..."
-                            onChange={handleTextChange}
-                        />
-                        <TextInput
-                            error
-                            margin={`0 0 ${SPACING.s}`}
-                            value={text}
-                            placeholder="Enter the beans here..."
-                            onChange={handleTextChange}
-                        />
-                    </Box>
-                    <Box padding="0 1rem" />
-                    <Box>
-                        <TextInput
-                            variation="filled"
-                            margin={`0 0 ${SPACING.s}`}
-                            value={text}
-                            placeholder="Enter the beans here..."
-                            onChange={handleTextChange}
-                        />
-                        <TextInput
-                            variation="filled"
-                            disabled
-                            margin={`0 0 ${SPACING.s}`}
-                            value={text}
-                            placeholder="Enter the beans here..."
-                            onChange={handleTextChange}
-                        />
-                        <TextInput
-                            variation="filled"
-                            error
-                            margin={`0 0 ${SPACING.s}`}
-                            value={text}
-                            placeholder="Enter the beans here..."
-                            onChange={handleTextChange}
-                        />
-                    </Box>
-                </Flex>
+                <Container margin={`0 0 ${SPACING.s}`} hGap={SPACING.m}>
+                    <TextInput
+                        value={text}
+                        placeholder="Enter the beans here..."
+                        onChange={handleTextChange}
+                    />
+                    <TextInput
+                        disabled
+                        value={text}
+                        placeholder="Enter the beans here..."
+                        onChange={handleTextChange}
+                    />
+                    <TextInput
+                        error
+                        value={text}
+                        placeholder="Enter the beans here..."
+                        onChange={handleTextChange}
+                    />
+                </Container>
+                <Container margin={`0 0 ${SPACING.l}`} hGap={SPACING.m}>
+                    <TextInput
+                        variation="filled"
+                        value={text}
+                        placeholder="Enter the beans here..."
+                        onChange={handleTextChange}
+                    />
+                    <TextInput
+                        variation="filled"
+                        disabled
+                        value={text}
+                        placeholder="Enter the beans here..."
+                        onChange={handleTextChange}
+                    />
+                    <TextInput
+                        variation="filled"
+                        error
+                        value={text}
+                        placeholder="Enter the beans here..."
+                        onChange={handleTextChange}
+                    />
+                </Container>
 
-                <TextInput
-                    margin={`0 0 ${SPACING.s}`}
-                    value={text}
-                    placeholder="Enter the beans here..."
-                    onChange={handleTextChange}
-                    w="34rem"
-                />
-                <TextInput
-                    variation="filled"
-                    margin={`0 0 ${SPACING.l}`}
-                    value={text}
-                    placeholder="Enter the beans here..."
-                    onChange={handleTextChange}
-                    w="34rem"
-                />
+                <Text fontSize={FONT_SIZE.l}>Select</Text>
+                <Container margin={`0 0 ${SPACING.l}`} hGap={SPACING.m}>
+                    <Select
+                        value={selectValue}
+                        onChange={(val) => { setSelectValue(val); }}
+                        options={[
+                            { label: 'Option A', value: 'a' },
+                            { label: 'Option B', value: 'b' },
+                            { label: 'Option C', value: 'c' },
+                            { label: 'Option D', value: 'd' },
+                        ]}
+                    />
+                    <Select
+                        disabled
+                        value={selectValue}
+                        onChange={(val) => { setSelectValue(val); }}
+                        options={[
+                            { label: 'Option A', value: 'a' },
+                            { label: 'Option B', value: 'b' },
+                            { label: 'Option C', value: 'c' },
+                            { label: 'Option D', value: 'd' },
+                        ]}
+                    />
+                    <Select
+                        error
+                        value={selectValue}
+                        onChange={(val) => { setSelectValue(val); }}
+                        options={[
+                            { label: 'Option A', value: 'a' },
+                            { label: 'Option B', value: 'b' },
+                            { label: 'Option C', value: 'c' },
+                            { label: 'Option D', value: 'd' },
+                        ]}
+                    />
+                </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Native Selects</Text>
                 <NativeSelect

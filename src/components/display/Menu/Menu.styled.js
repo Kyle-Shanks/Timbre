@@ -24,11 +24,11 @@ export const StyledComponent = styled(Box)`
 
 export const MenuItem = styled(Text)`
     padding: ${SPACING.s} ${SPACING.m};
-    color: ${({ theme }) => theme.textPrimary};
+    color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
     background-color: ${({ theme }) => theme.displayBackground};
+    cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
 
     &:hover {
-        cursor: pointer;
-        background-color: ${({ theme }) => theme.displayBackgroundActive};
+        background-color: ${({ theme, disabled }) => disabled ? theme.displayBackground : theme.displayBackgroundActive};
     }
 `;

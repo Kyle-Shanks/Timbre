@@ -13,14 +13,17 @@ const TextInput = ({
     placeholder,
     value,
     variation,
-    theme,
     ...styleProps
 }) => {
     const BASE_CLASS_NAME = 'TextInput';
     const handleChange = (e) => { if (!disabled) onChange(e.target.value); };
 
     return (
-        <Box className={`${BASE_CLASS_NAME}__wrapper ${className}`.trim()} {...styleProps}>
+        <Box
+            className={`${BASE_CLASS_NAME}__wrapper ${className}`.trim()}
+            display="inline-block"
+            {...styleProps}
+        >
             <StyledComponent
                 className={BASE_CLASS_NAME}
                 tag="input"
@@ -30,13 +33,11 @@ const TextInput = ({
                 placeholder={placeholder}
                 variation={variation}
                 value={value}
-                theme={theme}
                 w="100%"
             />
             <Clear
                 tag="svg"
                 viewBox="0 0 50 50"
-                theme={theme}
                 active={!disabled && value.length}
                 onClick={() => onChange('')}
             >

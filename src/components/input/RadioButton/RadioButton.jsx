@@ -9,7 +9,6 @@ const RadioButton = ({
     children,
     disabled,
     onClick,
-    theme,
     value,
     ...styleProps
 }) => {
@@ -23,7 +22,6 @@ const RadioButton = ({
         <StyledComponent
             className={`${BASE_CLASS_NAME} ${className}`.trim()}
             disabled={disabled}
-            theme={theme}
             onClick={handleClick}
             {...styleProps}
         >
@@ -32,14 +30,11 @@ const RadioButton = ({
                     tag="svg"
                     viewBox="0 0 60 60"
                     disabled={disabled}
-                    theme={theme}
                 >
                     <circle className="outline" cx="30" cy="30" r="25" />
                     <circle className="fill" cx="30" cy="30" r={checked ? "12.5" : "0"} />
                 </RadioSvg>
-                <Label disabled={disabled} theme={theme}>
-                    {children}
-                </Label>
+                <Label disabled={disabled}>{children}</Label>
             </Flex>
         </StyledComponent>
     );

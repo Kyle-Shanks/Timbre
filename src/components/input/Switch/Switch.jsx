@@ -4,7 +4,7 @@ import { StyledComponent, Thumb } from './Switch.styled';
 
 const VARIATION = ['outline', 'filled'];
 
-const Switch = ({ className, disabled, onChange, theme, variation, value, ...styleProps }) => {
+const Switch = ({ className, disabled, onChange, variation, value, ...styleProps }) => {
     const BASE_CLASS_NAME = 'Switch';
     const handleChange = () => {
         if (!disabled) onChange(!value);
@@ -14,7 +14,6 @@ const Switch = ({ className, disabled, onChange, theme, variation, value, ...sty
         <StyledComponent
             className={`${BASE_CLASS_NAME} ${className}`.trim()}
             disabled={disabled}
-            theme={theme}
             variation={variation}
             onClick={handleChange}
             {...styleProps}
@@ -22,7 +21,6 @@ const Switch = ({ className, disabled, onChange, theme, variation, value, ...sty
             <Thumb
                 disabled={disabled}
                 value={value}
-                theme={theme}
                 variation={variation}
             />
         </StyledComponent>

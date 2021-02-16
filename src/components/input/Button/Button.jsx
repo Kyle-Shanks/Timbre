@@ -16,7 +16,6 @@ const Button = ({
     loading,
     loadingText,
     onClick,
-    theme,
     variation,
     ...styleProps
 }) => {
@@ -30,13 +29,12 @@ const Button = ({
             tag="button"
             disabled={disabled}
             onClick={handleClick}
-            theme={theme}
             variation={variation}
             {...styleProps}
         >
             <Flex justify="center" align="center">
                 {!loading && iconLeft}
-                <Label theme={theme} variation={variation}>{loading ? loadingText : children}</Label>
+                <Label variation={variation}>{loading ? loadingText : children}</Label>
                 {!loading && iconRight}
             </Flex>
         </StyledComponent>
