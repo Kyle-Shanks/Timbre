@@ -7,7 +7,16 @@ import Icon from 'src/components/typography/Icon';
 import { SPACING } from 'src/styles/constants';
 import { StyledComponent, PlaceholderLabel, ArrowIcon } from './Select.styled';
 
-const Select = ({ className, disabled, error, placeholder, onChange, options, value, ...styleProps }) => {
+const Select = ({
+    className,
+    disabled,
+    error,
+    placeholder,
+    onChange,
+    options,
+    value,
+    ...styleProps
+}) => {
     const BASE_CLASS_NAME = 'Select';
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 

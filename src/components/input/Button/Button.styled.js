@@ -76,6 +76,10 @@ export const StyledComponent = styled(Box)`
         background-color: ${(props) => getHoverBackgroundColor(props)};
         border: ${(props) => `1px solid ${getHoverBorderColor(props)}`};
     }
+
+    &:active {
+        pointer-events: ${({ disabled }) => disabled ? 'none' : 'all'};
+    }
 `;
 
 export const Label = styled(Flex)`

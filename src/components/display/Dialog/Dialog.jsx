@@ -6,7 +6,16 @@ import Header from 'src/components/typography/Header';
 import Text from 'src/components/typography/Text';
 import { DialogOverlay, DialogContainer, DialogSection } from './Dialog.styled';
 
-const Dialog = ({ className, confirmLabel, message, header, onConfirm, onClose, open, ...styleProps }) => {
+const Dialog = ({
+    className,
+    confirmLabel,
+    message,
+    header,
+    onConfirm,
+    onClose,
+    open,
+    ...styleProps
+}) => {
     const BASE_CLASS_NAME = 'Dialog';
 
     const handleConfirm = () => {

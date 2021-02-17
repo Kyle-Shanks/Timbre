@@ -5,7 +5,13 @@ import { MenuDivider, MenuItem, StyledComponent } from './Menu.styled';
 
 // TODO: Add handler for then parent is close to the bottom to more menu position to above
 
-const Menu = ({ className, children, onClose, open, ...styleProps }) => {
+const Menu = ({
+    className,
+    children,
+    onClose,
+    open,
+    ...styleProps
+}) => {
     const BASE_CLASS_NAME = 'Menu';
 
     // Handling closing the dropdown when clicking outside of the component

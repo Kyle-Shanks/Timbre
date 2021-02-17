@@ -2,7 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledComponent } from './Textarea.styled';
 
-const Textarea = ({ className, disabled, error, onChange, placeholder, value, ...styleProps }) => {
+const Textarea = ({
+    className,
+    disabled,
+    error,
+    onChange,
+    placeholder,
+    value,
+    ...styleProps
+}) => {
     const BASE_CLASS_NAME = 'Textarea';
     const handleChange = (e) => { if (!disabled) onChange(e.target.value); };
 

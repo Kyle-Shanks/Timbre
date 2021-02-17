@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Flex from 'src/components/layout/Flex';
 import { StyledComponent, Label } from './Button.styled';
 
-// TODO: Implement size and variation styles
 const SIZE = ['l', 'm', 's', 'icon'];
 const VARIATION = ['primary', 'secondary', 'tertiary'];
 
@@ -21,14 +20,12 @@ const Button = ({
 }) => {
     const BASE_CLASS_NAME = 'Button';
 
-    const handleClick = (e) => { if (!disabled) onClick(e); };
-
     return (
         <StyledComponent
             className={`${BASE_CLASS_NAME} ${className}`.trim()}
             tag="button"
             disabled={disabled}
-            onClick={handleClick}
+            onClick={onClick}
             variation={variation}
             {...styleProps}
         >

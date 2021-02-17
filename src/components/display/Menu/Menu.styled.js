@@ -35,6 +35,10 @@ export const MenuItem = styled(Box)`
     &:hover {
         background-color: ${({ theme, disabled }) => disabled ? theme.displayBackground : theme.displayBackgroundActive};
     }
+
+    &:active {
+        pointer-events: ${({ disabled }) => disabled ? 'none' : 'all'};
+    }
 `;
 
 export const MenuDivider = styled(Box)`

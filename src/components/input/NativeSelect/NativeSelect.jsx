@@ -5,7 +5,16 @@ import { StyledComponent, ArrowIcon } from './NativeSelect.styled';
 
 // TODO: See why empty state is not working
 
-const NativeSelect = ({ className, disabled, error, onChange, options, placeholder, value, ...styleProps }) => {
+const NativeSelect = ({
+    className,
+    disabled,
+    error,
+    onChange,
+    options,
+    placeholder,
+    value,
+    ...styleProps
+}) => {
     const BASE_CLASS_NAME = 'NativeSelect';
 
     return (
