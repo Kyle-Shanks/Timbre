@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
 import Card from 'src/components/display/Card';
+import Dialog from 'src/components/display/Dialog';
 import Menu, { MenuItem, MenuDivider } from 'src/components/display/Menu';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from 'src/components/display/Modal';
 import Button from 'src/components/input/Button';
@@ -34,6 +35,7 @@ const App = ({ className }) => {
     const [checkValue, setCheckValue] = useState(true);
     const [radioValue, setRadioValue] = useState(true);
     const [radioGroupValue, setRadioGroupValue] = useState('');
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -225,6 +227,23 @@ const App = ({ className }) => {
                     >
                         <Icon icon="Bolt" />
                     </Button>
+                </Container>
+
+                <Text fontSize={FONT_SIZE.l}>Dialog</Text>
+                <Container margin={`0 0 ${SPACING.l}`}>
+                    <Button
+                        variation="secondary"
+                        onClick={() => { setIsDialogOpen(!isDialogOpen); }}
+                    >
+                        Dialog
+                    </Button>
+                    <Dialog
+                        header="Test Dialog"
+                        onClose={() => { setIsDialogOpen(false); }}
+                        open={isDialogOpen}
+                        message="Content to test out the neat dialog component"
+                        onConfirm={() => { console.log('Confirmed the thing'); }}
+                    />
                 </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Modal</Text>

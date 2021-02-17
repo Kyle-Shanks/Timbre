@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import Box from 'src/components/layout/Box';
-import Flex from 'src/components/layout/Flex';
 import Button from 'src/components/input/Button';
-import { absCenter, vertCenter, fixedFill, relaBlock } from 'src/styles/util';
+import { absCenter, fixedFill, relaBlock } from 'src/styles/util';
 import { SPACING, Z_INDEX, borderWidth, borderRadiusM } from 'src/styles/constants';
 
 const modalSizeMap = {

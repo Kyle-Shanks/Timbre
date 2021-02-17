@@ -5,9 +5,6 @@ import {
     ModalOverlay,
     ModalContainer,
     CloseButton,
-    ModalHeader,
-    ModalContent,
-    ModalFooter,
 } from './Modal.styled';
 
 const SIZE = ['l', 'm', 's'];
