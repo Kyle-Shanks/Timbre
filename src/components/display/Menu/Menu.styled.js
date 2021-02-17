@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Box from 'src/components/layout/Box';
-import Text from 'src/components/typography/Text';
+import { vertCenter } from 'src/styles/util';
 import { SPACING, Z_INDEX, borderWidth, borderRadiusM } from 'src/styles/constants';
 
 export const StyledComponent = styled(Box)`
@@ -22,13 +22,30 @@ export const StyledComponent = styled(Box)`
     }
 `;
 
-export const MenuItem = styled(Text)`
+export const MenuItem = styled(Box)`
     padding: ${SPACING.s} ${SPACING.m};
     color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
     background-color: ${({ theme }) => theme.displayBackground};
     cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
 
+    & > * {
+        color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
+    }
+
     &:hover {
         background-color: ${({ theme, disabled }) => disabled ? theme.displayBackground : theme.displayBackgroundActive};
+    }
+`;
+
+export const MenuDivider = styled(Box)`
+    padding: ${SPACING.m};
+
+    &::before {
+        content: '';
+        ${vertCenter}
+        height: 1px;
+        left: ${SPACING.m};
+        right: ${SPACING.m};
+        background-color: ${({ theme }) => theme.border};
     }
 `;

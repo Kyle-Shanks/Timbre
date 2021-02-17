@@ -21,7 +21,9 @@ const getSize = (size) => {
 export const StyledComponent = styled(Box)`
     ${relaInline}
     height: ${({ size }) => getSize(size)};
+    min-height: ${({ size }) => getSize(size)};
     width: ${({ size }) => getSize(size)};
+    min-width: ${({ size }) => getSize(size)};
     & > svg {
         stroke-width: ${defaultIconStrokeWidth};
         vertical-align: baseline;

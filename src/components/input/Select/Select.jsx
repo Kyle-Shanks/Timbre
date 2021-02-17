@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Box from 'src/components/layout/Box';
-import Menu from 'src/components/display/Menu';
+import Flex from 'src/components/layout/Flex';
+import Menu, { MenuItem } from 'src/components/display/Menu';
+import Icon from 'src/components/typography/Icon';
+import { SPACING } from 'src/styles/constants';
 import { StyledComponent, PlaceholderLabel, ArrowIcon } from './Select.styled';
 
 const Select = ({ className, disabled, error, placeholder, onChange, options, value, ...styleProps }) => {
@@ -35,15 +38,23 @@ const Select = ({ className, disabled, error, placeholder, onChange, options, va
             <Menu
                 open={isMenuOpen}
                 onClose={() => { setIsMenuOpen(false) }}
-                options={options.map((opt) => ({
-                    label: opt.label,
-                    onClick: () => {
-                        handleUpdate(opt.value);
-                        setIsMenuOpen(false);
-                    },
-                    disabled: opt.disabled
-                }))}
-            />
+            >
+                {options.map((opt) => (
+                    <MenuItem
+                        key={`SelectMenuItem_${opt.label}`}
+                        disabled={opt.disabled}
+                        onClick={() => {
+                            handleUpdate(opt.value);
+                            setIsMenuOpen(false);
+                        }}
+                    >
+                        <Flex align="center" wrap="none" hGap={SPACING.xs}>
+                            <Box>{opt.label}</Box>
+                            {opt.value === value && <Icon icon="CircleCheck" />}
+                        </Flex>
+                    </MenuItem>
+                ))}
+            </Menu>
         </Box>
     );
 };

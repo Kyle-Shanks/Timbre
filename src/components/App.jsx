@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
 import Card from 'src/components/display/Card';
-import Menu from 'src/components/display/Menu';
+import Menu, { MenuItem, MenuDivider } from 'src/components/display/Menu';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from 'src/components/display/Modal';
 import Button from 'src/components/input/Button';
 import Checkbox from 'src/components/input/Checkbox';
@@ -268,19 +268,27 @@ const App = ({ className }) => {
                     >
                         Menu
                     </Button>
-                    <Menu
-                        open={isMenuOpen}
-                        onClose={() => { setIsMenuOpen(false) }}
-                        options={[
-                            { label: 'Option A', onClick: () => { console.log('Optoin A clicked'); } },
-                            { label: 'Option B', onClick: () => { console.log('Optoin B clicked'); } },
-                            { label: 'Option C', onClick: () => { console.log('Optoin C clicked'); } },
-                            { label: 'Option D', onClick: () => { console.log('Optoin D clicked'); } },
-                            { disabled: true, label: 'Option E', onClick: () => { console.log('Optoin E clicked'); } },
-                            { label: 'Option F', onClick: () => { console.log('Optoin F clicked'); } },
-                            { label: 'Option G', onClick: () => { console.log('Optoin G clicked'); } },
-                        ]}
-                    />
+                    <Menu open={isMenuOpen} onClose={() => { setIsMenuOpen(false) }}>
+                        <MenuItem onClick={() => console.log('Option A clicked')}>
+                            <Text truncate>Option A</Text>
+                        </MenuItem>
+                        <MenuItem disabled onClick={() => console.log('Option B clicked')}>
+                            <Text truncate>Option B</Text>
+                        </MenuItem>
+                        <MenuItem onClick={() => console.log('Option C clicked')}>
+                            <Text truncate>Option C</Text>
+                        </MenuItem>
+                        <MenuDivider />
+                        <MenuItem onClick={() => console.log('Option D clicked')}>
+                            <Text truncate>Option D</Text>
+                        </MenuItem>
+                        <MenuItem onClick={() => console.log('Option E clicked')}>
+                            <Text truncate>Option E</Text>
+                        </MenuItem>
+                        <MenuItem onClick={() => console.log('Option F clicked')}>
+                            <Text truncate>Option F</Text>
+                        </MenuItem>
+                    </Menu>
                 </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Textareas</Text>
