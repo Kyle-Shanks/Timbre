@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { relaBlock } from 'src/styles/util';
 
 export const StyledComponent = styled.div`
-    ${relaBlock}
+    position: relative;
+
     && {
         ${({ display }) => display && `display: ${display};`}
         ${({ h }) => h && `height: ${h};`}

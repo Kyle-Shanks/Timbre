@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
+import Table, { TableHead, TableBody, TableFoot, TableRow, Th, Td } from 'src/components/data/Table';
 import Card from 'src/components/display/Card';
 import Dialog from 'src/components/display/Dialog';
 import Menu, { MenuItem, MenuDivider } from 'src/components/display/Menu';
@@ -114,6 +115,38 @@ const App = ({ className }) => {
                             { label: 'Rivals of Aether', href: '#' },
                         ]}
                     />
+                </Container>
+
+                <Text fontSize={FONT_SIZE.l}>Table</Text>
+                <Container margin={`0 0 ${SPACING.l}`}>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <Th>Header A</Th>
+                                <Th>Header B</Th>
+                                <Th>Header C</Th>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            <TableRow>
+                                <Td>Content A1</Td>
+                                <Td>Content B1</Td>
+                                <Td>Content C1</Td>
+                            </TableRow>
+                            <TableRow>
+                                <Td>Content A2</Td>
+                                <Td>Content B2</Td>
+                                <Td>Content C2</Td>
+                            </TableRow>
+                        </TableBody>
+                        <TableFoot>
+                            <TableRow>
+                                <Th>Header A</Th>
+                                <Th>Header B</Th>
+                                <Th>Header C</Th>
+                            </TableRow>
+                        </TableFoot>
+                    </Table>
                 </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Switch</Text>
