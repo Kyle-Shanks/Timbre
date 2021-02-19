@@ -10,13 +10,16 @@ import {
     StyledHeadCell,
 } from './Table.styled';
 
-const Table = ({ className, children, ...styleProps }) => {
+const SIZE = ['l', 'm', 's'];
+
+const Table = ({ className, children, size, ...styleProps }) => {
     const BASE_CLASS_NAME = 'Table';
 
     return (
         <StyledComponent
             className={`${BASE_CLASS_NAME} ${className}`.trim()}
             tag="table"
+            size={size}
             {...styleProps}
         >
             {children}
@@ -27,11 +30,13 @@ const Table = ({ className, children, ...styleProps }) => {
 Table.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
+    size: PropTypes.oneOf(SIZE),
 };
 
 Table.defaultProps = {
     className: '',
     children: null,
+    size: SIZE[1],
 };
 
 export default Table;

@@ -9,21 +9,18 @@ import {
     borderRadiusM,
 } from 'src/styles/constants';
 
-const getPadding = ({ size }) => {
-    switch (size) {
-        case 'l': return `${SPACING.m} ${SPACING.ml}`;
-        case 'm': return `${SPACING.s} ${SPACING.m}`;
-        case 's': return `${SPACING.xxs} ${SPACING.s}`;
-        case 'icon': return SPACING.xs;
-    }
+const paddingMap = {
+    l: `${SPACING.m} ${SPACING.ml}`,
+    m: `${SPACING.s} ${SPACING.m}`,
+    s: `${SPACING.xxs} ${SPACING.s}`,
+    icon: SPACING.xs,
 };
 
-const getFontSize = ({ size }) => {
-    switch (size) {
-        case 'l': return FONT_SIZE.l;
-        case 's': return FONT_SIZE.s;
-        default: return FONT_SIZE.m;
-    }
+const fontSizeMap = {
+    l: FONT_SIZE.ml,
+    m: FONT_SIZE.m,
+    s: FONT_SIZE.s,
+    icon: FONT_SIZE.m,
 };
 
 const getBackgroundColor = ({ theme, variation }) => {
@@ -59,10 +56,10 @@ export const StyledComponent = styled(Box)`
     vertical-align: middle;
     cursor: pointer;
     min-width: ${({ size }) => size === 'icon' ? '0rem' : `6rem`};
-    padding: ${(props) => getPadding(props)};
+    padding: ${({ size }) => paddingMap[size]};
     background-color: ${(props) => getBackgroundColor(props)};
     border: ${(props) => `1px solid ${getBorderColor(props)}`};
-    font-size: ${(props) => getFontSize(props)};
+    font-size: ${({ size }) => fontSizeMap[size]};
     color: ${(props) => getColor(props)};
     font-weight: ${FONT_WEIGHT.semibold};
     border-radius: ${borderRadiusM};

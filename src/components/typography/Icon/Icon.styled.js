@@ -9,21 +9,19 @@ import {
     iconSizeS,
 } from 'src/styles/constants';
 
-const getSize = (size) => {
-    switch (size) {
-        case 'xl': return iconSizeXL;
-        case 'l': return iconSizeL;
-        case 's': return iconSizeS;
-        default: return iconSizeM;
-    }
+const sizeMap = {
+    xl: iconSizeXL,
+    l: iconSizeL,
+    m: iconSizeM,
+    s: iconSizeS,
 };
 
 export const StyledComponent = styled(Box)`
     ${relaInline}
-    height: ${({ size }) => getSize(size)};
-    min-height: ${({ size }) => getSize(size)};
-    width: ${({ size }) => getSize(size)};
-    min-width: ${({ size }) => getSize(size)};
+    height: ${({ size }) => sizeMap[size]};
+    min-height: ${({ size }) => sizeMap[size]};
+    width: ${({ size }) => sizeMap[size]};
+    min-width: ${({ size }) => sizeMap[size]};
     & > svg {
         stroke-width: ${defaultIconStrokeWidth};
         vertical-align: baseline;
