@@ -19,6 +19,7 @@ import Box from 'src/components/layout/Box';
 import Container from 'src/components/layout/Container';
 import Flex from 'src/components/layout/Flex';
 import Header from 'src/components/typography/Header';
+import Breadcrumbs from 'src/components/typography/Breadcrumbs';
 import Icon from 'src/components/typography/Icon';
 import Text from 'src/components/typography/Text';
 import { GlobalStyles } from 'src/styles/globalStyles';
@@ -101,6 +102,18 @@ const App = ({ className }) => {
                     <Icon icon="Settings" />
                     <Icon icon="Upload" />
                     <Icon icon="X" />
+                </Container>
+
+                <Text fontSize={FONT_SIZE.l}>Breadcrumbs</Text>
+                <Container margin={`0 0 ${SPACING.l}`}>
+                    <Breadcrumbs
+                        crumbs={[
+                            { label: 'Home' },
+                            { label: 'Places', href: '#' },
+                            { label: 'NYC', href: '#' },
+                            { label: 'Rivals of Aether', href: '#' },
+                        ]}
+                    />
                 </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Switch</Text>
