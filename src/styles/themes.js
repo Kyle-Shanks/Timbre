@@ -22,6 +22,7 @@ export const THEMES = {
         textDisabled: shades.grey40,
         textPlaceholder: shades.grey40,
         textDisabledPlaceholder: shades.grey30,
+        textLink: colors.teal,
 
         filledInputBackground: shades.grey10,
         filledInputHoverBackground: shades.grey20,
@@ -54,6 +55,7 @@ export const THEMES = {
         textDisabled: shades.grey50,
         textPlaceholder: shades.grey50,
         textDisabledPlaceholder: shades.grey60,
+        textLink: colors.teal,
 
         filledInputBackground: shades.grey70,
         filledInputHoverBackground: shades.grey60,

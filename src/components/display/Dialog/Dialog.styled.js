@@ -20,8 +20,8 @@ export const DialogContainer = styled(Box)`
 
     // Toggle Styles
     ${({ open }) => open
-        ? `opacity: 1; pointer-events: all; top: ${SPACING.l};`
-        : `opacity: 0; pointer-events: none; top: ${SPACING.xxl};`
+        ? `opacity: 1; pointer-events: all; top: ${SPACING.xl};`
+        : `opacity: 0; pointer-events: none; top: calc(${SPACING.xl} + ${SPACING.l});`
     }
 `;
 
