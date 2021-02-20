@@ -4,7 +4,6 @@ import Box from 'src/components/layout/Box';
 export const StyledComponent = styled(Box)`
     display: grid;
     ${({ template, rows, columns, areas }) => {
-        console.log(template);
         if (template) return `grid-template: ${template};`
         return (rows ? `grid-template-rows: ${rows};` : '')
             + (columns ? `grid-template-columns: ${columns};` : '')

@@ -20,6 +20,7 @@ import Box from 'src/components/layout/Box';
 import Divider from 'src/components/layout/Divider';
 import Container from 'src/components/layout/Container';
 import Flex from 'src/components/layout/Flex';
+import SimpleGrid from 'src/components/layout/SimpleGrid';
 import Header from 'src/components/typography/Header';
 import Breadcrumbs from 'src/components/typography/Breadcrumbs';
 import Icon from 'src/components/typography/Icon';
