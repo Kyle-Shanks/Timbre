@@ -8,6 +8,7 @@ import Dialog from 'src/components/display/Dialog';
 import Menu, { MenuItem, MenuDivider } from 'src/components/display/Menu';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from 'src/components/display/Modal';
 import Loader from 'src/components/feedback/Loader';
+import Progress from 'src/components/feedback/Progress';
 import Button from 'src/components/input/Button';
 import Checkbox from 'src/components/input/Checkbox';
 import RadioButton from 'src/components/input/RadioButton';
@@ -32,6 +33,7 @@ const App = ({ className }) => {
     const BASE_CLASS_NAME = 'App';
     const [theme, setTheme] = useState(LIGHT);
     const [text, setText] = useState('');
+    const [progressValue, setProgressValue] = useState(30);
     const [textareaValue, setTextareaValue] = useState('');
     const [selectValue, setSelectValue] = useState('');
     const [switchValue, setSwitchValue] = useState(false);
@@ -45,6 +47,13 @@ const App = ({ className }) => {
     const toggleTheme = () => (theme === LIGHT ? setTheme(DARK) : setTheme(LIGHT));
     const handleTextChange = (val) => setText(val);
     const handleSelectChange = (val) => setSelectValue(val);
+
+    const increaseProgress = () => {
+        if (progressValue < 100) setProgressValue(progressValue + 10);
+    };
+    const decreaseProgress = () => {
+        if (progressValue > 0) setProgressValue(progressValue - 10);
+    };
 
     return (
         <ThemeProvider theme={THEMES[theme]}>
@@ -84,6 +93,7 @@ const App = ({ className }) => {
                     <Icon icon="ArrowLeft" />
                     <Icon icon="ArrowRight" />
                     <Icon icon="Bolt" />
+                    <Icon icon="Check" />
                     <Icon icon="ChevronDown" />
                     <Icon icon="ChevronLeft" />
                     <Icon icon="ChevronRight" />
@@ -125,6 +135,17 @@ const App = ({ className }) => {
                     <Loader size="l" />
                     <Loader size="xl" />
                 </SimpleGrid>
+
+                <Text fontSize={FONT_SIZE.l}>Progress</Text>
+                <Container margin={`0 0 ${SPACING.l}`}>
+                    <Button size="icon" variation="tertiary" onClick={decreaseProgress}>
+                        <Icon icon="CircleMinus" />
+                    </Button>
+                    <Progress display="inline-block" progress={progressValue} />
+                    <Button size="icon" variation="tertiary" onClick={increaseProgress}>
+                        <Icon icon="CirclePlus" />
+                    </Button>
+                </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Table</Text>
                 <Container margin={`0 0 ${SPACING.l}`}>

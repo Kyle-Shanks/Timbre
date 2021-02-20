@@ -25,7 +25,7 @@ const resetStyles = `
         border: 0;
         font-size: 100%;
         font: inherit;
-        vertical-align: baseline;
+        vertical-align: middle;
     }
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure,
@@ -66,7 +66,6 @@ export const GlobalStyles = createGlobalStyle`
     * {
         box-sizing: border-box;
         transition: ${defaultTransition};
-        vertical-align: middle;
     }
 
     body {

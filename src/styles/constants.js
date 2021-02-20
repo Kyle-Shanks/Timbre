@@ -41,7 +41,7 @@ export const borderRadiusM = size6;
 export const borderRadiusS = size4;
 export const borderRadiusXS = size2;
 
-export const defaultTransition = '0.25s cubic-bezier(0, 0.5, 0.2, 1)';
+export const defaultTransition = '0.25s cubic-bezier(0.5, 0, 0.2, 1)';
 
 export const defaultCheckboxSize = size20;
 

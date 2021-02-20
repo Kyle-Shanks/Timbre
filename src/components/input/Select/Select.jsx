@@ -59,7 +59,7 @@ const Select = ({
                     >
                         <Flex align="center" wrap="none" hGap={SPACING.xs}>
                             <Box>{opt.label}</Box>
-                            {opt.value === value && <Icon icon="CircleCheck" />}
+                            {opt.value === value && <Icon size="s" icon="Check" />}
                         </Flex>
                     </MenuItem>
                 ))}

@@ -36,9 +36,9 @@ export const LoaderSvg = styled.svg`
     fill: none;
 
     opacity: 0;
-    animation: ${fade} 0.2s 0.3s cubic-bezier(0.6,0,0.2,1) forwards;
+    animation: ${fade} 0.6s 0.3s cubic-bezier(0.5,0,0.2,1) forwards;
 
     & path {
-        animation: ${spin} 1.6s cubic-bezier(0.6,0,0.2,1) infinite;
+        animation: ${spin} 1.2s cubic-bezier(0.5,0,0.2,1) infinite;
     }
 `;

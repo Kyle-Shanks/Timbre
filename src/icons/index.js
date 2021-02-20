@@ -1,6 +1,7 @@
 import ArrowLeft from './ArrowLeft';
 import ArrowRight from './ArrowRight';
 import Bolt from './Bolt';
+import Check from './Check';
 import ChevronDown from './ChevronDown';
 import ChevronLeft from './ChevronLeft';
 import ChevronRight from './ChevronRight';
@@ -26,6 +27,7 @@ export default {
     ArrowLeft,
     ArrowRight,
     Bolt,
+    Check,
     ChevronDown,
     ChevronLeft,
     ChevronRight,
