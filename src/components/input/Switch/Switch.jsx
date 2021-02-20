@@ -45,7 +45,7 @@ Switch.propTypes = {
 Switch.defaultProps = {
     className: '',
     disabled: false,
-    variation: VARIATION[0],
+    variation: 'outline',
 };
 
 export default Switch;

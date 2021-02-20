@@ -34,9 +34,9 @@ Text.defaultProps = {
     className: '',
 
     // Style Props
-    align: ALIGN[0],
+    align: 'left',
     truncate: false,
-    variation: VARIATION[0],
+    variation: 'primary',
 };
 
 export default Text;

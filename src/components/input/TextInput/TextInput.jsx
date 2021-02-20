@@ -70,7 +70,7 @@ TextInput.defaultProps = {
     error: false,
     onChange: () => {},
     placeholder: '',
-    variation: VARIATION[0],
+    variation: 'outline',
 };
 
 export default TextInput;

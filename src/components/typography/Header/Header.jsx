@@ -31,10 +31,10 @@ Header.propTypes = {
 Header.defaultProps = {
     children: null,
     className: '',
-    tag: TAG[0],
+    tag: 'h1',
 
     // Style Props
-    align: ALIGN[0],
+    align: 'left',
     truncate: false,
 };
 

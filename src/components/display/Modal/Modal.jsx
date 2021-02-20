@@ -61,7 +61,7 @@ Modal.defaultProps = {
     closeOnOutsideClick: true,
     displayCloseButton: true,
     open: false,
-    size: SIZE[1],
+    size: 'm',
 };
 
 export default Modal;

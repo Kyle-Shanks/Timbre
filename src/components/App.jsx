@@ -7,6 +7,7 @@ import Card from 'src/components/display/Card';
 import Dialog from 'src/components/display/Dialog';
 import Menu, { MenuItem, MenuDivider } from 'src/components/display/Menu';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from 'src/components/display/Modal';
+import Loader from 'src/components/feedback/Loader';
 import Button from 'src/components/input/Button';
 import Checkbox from 'src/components/input/Checkbox';
 import RadioButton from 'src/components/input/RadioButton';
@@ -16,8 +17,6 @@ import NativeSelect from 'src/components/input/NativeSelect';
 import Select from 'src/components/input/Select';
 import Textarea from 'src/components/input/Textarea';
 import TextInput from 'src/components/input/TextInput';
-import Box from 'src/components/layout/Box';
-import Divider from 'src/components/layout/Divider';
 import Container from 'src/components/layout/Container';
 import Flex from 'src/components/layout/Flex';
 import SimpleGrid from 'src/components/layout/SimpleGrid';
@@ -119,6 +118,14 @@ const App = ({ className }) => {
                     />
                 </Container>
 
+                <Text fontSize={FONT_SIZE.l}>Loader</Text>
+                <SimpleGrid columns={4} margin={`0 0 ${SPACING.l}`}>
+                    <Loader size="s" />
+                    <Loader size="m" />
+                    <Loader size="l" />
+                    <Loader size="xl" />
+                </SimpleGrid>
+
                 <Text fontSize={FONT_SIZE.l}>Table</Text>
                 <Container margin={`0 0 ${SPACING.l}`}>
                     <Table>
@@ -149,14 +156,6 @@ const App = ({ className }) => {
                             </TableRow>
                         </TableFoot>
                     </Table>
-                </Container>
-
-                <Text fontSize={FONT_SIZE.l}>Divider</Text>
-                <Container margin={`0 0 ${SPACING.l}`}>
-                    <Divider />
-                    <Text>Text Here</Text>
-                    <Divider margin={`${SPACING.l} ${SPACING.s}`} />
-                    <Text>Text Here</Text>
                 </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Switch</Text>

@@ -32,7 +32,7 @@ Icon.defaultProps = {
     className: '',
     children: null,
     icon: '',
-    size: SIZE[2],
+    size: 'm',
 };
 
 export default Icon;

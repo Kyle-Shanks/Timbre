@@ -36,7 +36,7 @@ Table.propTypes = {
 Table.defaultProps = {
     className: '',
     children: null,
-    size: SIZE[1],
+    size: 'm',
 };
 
 export default Table;

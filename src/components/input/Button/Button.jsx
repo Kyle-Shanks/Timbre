@@ -63,8 +63,8 @@ Button.defaultProps = {
     onClick: () => {},
 
     // Style Props
-    size: SIZE[1],
-    variation: VARIATION[0],
+    size: 'm',
+    variation: 'primary',
 };
 
 export default Button;
