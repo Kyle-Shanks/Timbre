@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Box from 'src/components/layout/Box';
+import { relaBlock } from 'src/styles/util';
 import { SPACING, borderWidth, borderRadiusS, defaultTransition } from 'src/styles/constants';
 
 const getBorder = ({ theme, disabled, error }) => {
@@ -13,6 +14,7 @@ const getBorderHover = ({ theme, disabled, error }) => {
 };
 
 export const StyledComponent = styled(Box)`
+    ${relaBlock}
     min-width: 20rem;
     padding: ${SPACING.s} ${SPACING.m};
     color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};

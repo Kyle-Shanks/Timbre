@@ -17,6 +17,7 @@ import Select from 'src/components/input/Select';
 import Textarea from 'src/components/input/Textarea';
 import TextInput from 'src/components/input/TextInput';
 import Box from 'src/components/layout/Box';
+import Divider from 'src/components/layout/Divider';
 import Container from 'src/components/layout/Container';
 import Flex from 'src/components/layout/Flex';
 import Header from 'src/components/typography/Header';
@@ -147,6 +148,14 @@ const App = ({ className }) => {
                             </TableRow>
                         </TableFoot>
                     </Table>
+                </Container>
+
+                <Text fontSize={FONT_SIZE.l}>Divider</Text>
+                <Container margin={`0 0 ${SPACING.l}`}>
+                    <Divider />
+                    <Text>Text Here</Text>
+                    <Divider margin={`${SPACING.l} ${SPACING.s}`} />
+                    <Text>Text Here</Text>
                 </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Switch</Text>
