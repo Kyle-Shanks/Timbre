@@ -4,9 +4,9 @@ export const colors = {
     redLite: '#f69c9c',
     redDark: '#e31515',
 
-    orange: '#ef7e33',
-    orangeLite: '#f5ab7a',
-    orangeDark: '#c65810',
+    orange: '#ef9433',
+    orangeLite: '#f5b97a',
+    orangeDark: '#c66e10',
 
     yellow: '#ffdf6c',
     yellowLite: '#fff0b9',

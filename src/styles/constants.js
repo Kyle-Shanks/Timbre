@@ -25,6 +25,7 @@ export const SPACING = {
     l: size32,
     ml: size24,
     m: size16,
+    sm: size12,
     s: size8,
     xs: size4,
     xxs: size2,

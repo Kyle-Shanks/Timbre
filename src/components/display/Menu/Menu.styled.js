@@ -23,7 +23,7 @@ export const StyledComponent = styled(Box)`
 `;
 
 export const MenuItem = styled(Box)`
-    padding: ${SPACING.s} ${SPACING.m};
+    padding: ${SPACING.sm} ${SPACING.m};
     color: ${({ theme, disabled }) => disabled ? theme.textDisabled : theme.textPrimary};
     background-color: ${({ theme }) => theme.displayBackground};
     cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};

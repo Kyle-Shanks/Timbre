@@ -7,6 +7,7 @@ import Card from 'src/components/display/Card';
 import Dialog from 'src/components/display/Dialog';
 import Menu, { MenuItem, MenuDivider } from 'src/components/display/Menu';
 import Modal, { ModalHeader, ModalContent, ModalFooter } from 'src/components/display/Modal';
+import Alert, { AlertTitle, AlertDescription } from 'src/components/feedback/Alert';
 import Loader from 'src/components/feedback/Loader';
 import Progress from 'src/components/feedback/Progress';
 import Button from 'src/components/input/Button';
@@ -135,6 +136,34 @@ const App = ({ className }) => {
                     <Loader size="l" />
                     <Loader size="xl" />
                 </SimpleGrid>
+
+                <Text fontSize={FONT_SIZE.l}>Alert</Text>
+                <Container margin={`0 0 ${SPACING.l}`} vGap={SPACING.s}>
+                    <Alert type="success">
+                        <AlertTitle>Success</AlertTitle>
+                        <AlertDescription>
+                            Success Message
+                        </AlertDescription>
+                    </Alert>
+                    <Alert type="info">
+                        <AlertTitle>Info</AlertTitle>
+                        <AlertDescription>
+                            Info Message
+                        </AlertDescription>
+                    </Alert>
+                    <Alert type="warning">
+                        <AlertTitle>Warning</AlertTitle>
+                        <AlertDescription>
+                            Warning Message
+                        </AlertDescription>
+                    </Alert>
+                    <Alert type="error">
+                        <AlertTitle>Error</AlertTitle>
+                        <AlertDescription>
+                            Error Message
+                        </AlertDescription>
+                    </Alert>
+                </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Progress</Text>
                 <Container margin={`0 0 ${SPACING.l}`}>

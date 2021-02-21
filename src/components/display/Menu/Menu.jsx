@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import Text from 'src/components/typography/Text';
-import { MenuDivider, MenuItem, StyledComponent } from './Menu.styled';
+import { StyledComponent } from './Menu.styled';
 
 // TODO: Add handler for then parent is close to the bottom to more menu position to above
 

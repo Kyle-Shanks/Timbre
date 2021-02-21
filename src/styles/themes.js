@@ -5,8 +5,9 @@ export const DARK = 'dark';
 
 const sharedColors = {
     success: colors.green,
-    warning: colors.yellow,
+    warning: colors.orange,
     error: colors.red,
+    info: colors.blue,
 
     primary: colors.teal,
 };

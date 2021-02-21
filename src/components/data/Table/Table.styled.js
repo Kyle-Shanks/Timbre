@@ -28,6 +28,7 @@ const headFontSizeMap = {
 
 export const StyledCell = styled(Box)`
     ${({ align }) => align && `text-align: ${align};`}
+    color: ${({ theme }) => theme.textPrimary};
 
 	& + & {
         box-shadow: -1px 0 0 0 ${({ theme }) => theme.border};
