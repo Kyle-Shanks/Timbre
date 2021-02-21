@@ -34,9 +34,9 @@ export const THEMES = {
         borderHover: shades.grey60,
         borderActive: colors.blue,
 
-        icon: shades.grey40,
-        iconHover: shades.grey60,
-        iconActive: shades.grey60,
+        icon: shades.grey50,
+        iconHover: shades.grey70,
+        iconActive: shades.grey70,
 
         buttonPrimaryBackground: colors.teal,
         buttonPrimaryHoverBackground: colors.tealDark,
@@ -67,9 +67,9 @@ export const THEMES = {
         borderHover: shades.grey30,
         borderActive: colors.blue,
 
-        icon: shades.grey50,
-        iconHover: shades.grey30,
-        iconActive: shades.grey30,
+        icon: shades.grey40,
+        iconHover: shades.grey20,
+        iconActive: shades.grey20,
 
         buttonPrimaryBackground: colors.teal,
         buttonPrimaryHoverBackground: colors.tealLite,

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
 import Table, { TableHead, TableBody, TableFoot, TableRow, Th, Td } from 'src/components/data/Table';
+import Tag from 'src/components/data/Tag';
 import Card from 'src/components/display/Card';
 import Dialog from 'src/components/display/Dialog';
 import Menu, { MenuItem, MenuDivider } from 'src/components/display/Menu';
@@ -174,6 +175,17 @@ const App = ({ className }) => {
                     <Button size="icon" variation="tertiary" onClick={increaseProgress}>
                         <Icon icon="CirclePlus" />
                     </Button>
+                </Container>
+
+                <Text fontSize={FONT_SIZE.l}>Tags</Text>
+                <Container margin={`0 0 ${SPACING.l}`} hGap={SPACING.s}>
+                    <Tag>Cool</Tag>
+                    <Tag iconLeft={<Icon size="s" icon="Bolt" />}>Cool</Tag>
+                    <Tag iconRight={<Icon size="s" icon="X" />}>Cool</Tag>
+
+                    <Tag variation="outline">Beans</Tag>
+                    <Tag iconLeft={<Icon size="s" icon="Bolt" />} variation="outline">Beans</Tag>
+                    <Tag iconRight={<Icon size="s" icon="X" />} variation="outline">Beans</Tag>
                 </Container>
 
                 <Text fontSize={FONT_SIZE.l}>Table</Text>
