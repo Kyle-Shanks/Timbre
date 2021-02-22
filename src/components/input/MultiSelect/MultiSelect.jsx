@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Box from 'src/components/layout/Box';
-import Flex from 'src/components/layout/Flex';
 import Menu, { MenuItem } from 'src/components/display/Menu';
-import Icon from 'src/components/typography/Icon';
+import Checkbox from 'src/components/input/Checkbox';
+import Box from 'src/components/layout/Box';
 import Text from 'src/components/typography/Text';
-import { SPACING } from 'src/styles/constants';
-import { StyledComponent, PlaceholderLabel, ArrowIcon } from './Select.styled';
+import { StyledComponent, ArrowIcon, PlaceholderLabel } from './MultiSelect.styled';
 
-const Select = ({
+const BASE_CLASS_NAME = 'MultiSelect';
+
+const MultiSelect = ({
     className,
     disabled,
     error,
@@ -18,14 +18,22 @@ const Select = ({
     value,
     ...styleProps
 }) => {
-    const BASE_CLASS_NAME = 'Select';
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const optionMap = options.reduce((acc, opt) => {
+        acc[opt.value] = opt.label;
+        return acc;
+    }, {});
 
-    const getValueLabel = (val) => options.find((opt) => opt.value === val).label;
-
-    const handleUpdate = (val) => {
-        if (!disabled) onChange(val);
+    const isOptionSelected = (optionValue) => value.includes(optionValue);
+    const selectOption = (optionValue) => onChange([...value, optionValue]);
+    const unselectOption = (optionValue) => {
+        const index = value.indexOf(optionValue);
+        const newState = [...value.slice(0, index), ...value.slice(index + 1)];
+        onChange(newState);
     };
+    const toggleOption = (optionValue) => {
+        isOptionSelected(optionValue) ? unselectOption(optionValue) : selectOption(optionValue);
+    }
 
     return (
         <Box
@@ -34,13 +42,13 @@ const Select = ({
             {...styleProps}
         >
             <StyledComponent
-                className={isMenuOpen ? 'is-focused' : '' }
+                className={isMenuOpen ? 'is-focused' : ''}
                 disabled={disabled}
                 error={error}
                 onClick={() => { if (!disabled) setIsMenuOpen(!isMenuOpen) }}
             >
-                {value
-                    ? <Text>{getValueLabel(value)}</Text>
+                {value.length
+                    ? <Text truncate>{value.map(val => optionMap[val]).join(', ')}</Text>
                     : <PlaceholderLabel disabled={disabled}>{placeholder}</PlaceholderLabel>
                 }
                 <ArrowIcon icon="ChevronDown" />
@@ -51,17 +59,13 @@ const Select = ({
             >
                 {options.map((opt) => (
                     <MenuItem
-                        key={`SelectMenuItem_${opt.label}`}
+                        key={`MultiSelectMenuItem_${opt.label}`}
                         disabled={opt.disabled}
-                        onClick={() => {
-                            handleUpdate(opt.value);
-                            setIsMenuOpen(false);
-                        }}
+                        onClick={() => toggleOption(opt.value)}
                     >
-                        <Flex align="center" wrap="none" hGap={SPACING.xs}>
-                            <Box>{opt.label}</Box>
-                            {opt.value === value && <Icon size="s" icon="Check" />}
-                        </Flex>
+                        <Checkbox display="block" checked={isOptionSelected(opt.value)}>
+                            {opt.label}
+                        </Checkbox>
                     </MenuItem>
                 ))}
             </Menu>
@@ -69,27 +73,29 @@ const Select = ({
     );
 };
 
-Select.propTypes = {
+MultiSelect.propTypes = {
     className: PropTypes.string,
     disabled: PropTypes.bool,
     error: PropTypes.bool,
     placeholder: PropTypes.string,
-    onChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func,
     options: PropTypes.arrayOf(
         PropTypes.shape({
             label: PropTypes.string.isRequired,
             value: PropTypes.string.isRequired,
             disabled: PropTypes.bool,
         })
-    ).isRequired,
-    value: PropTypes.string.isRequired,
+    ),
+    value: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-Select.defaultProps = {
+MultiSelect.defaultProps = {
     className: '',
     disabled: false,
     error: false,
-    placeholder: 'Select option...',
+    placeholder: 'Select options...',
+    onChange: () => {},
+    options: [],
 };
 
-export default Select;
+export default MultiSelect;

@@ -17,6 +17,7 @@ import RadioButton from 'src/components/input/RadioButton';
 import RadioGroup from 'src/components/input/RadioGroup';
 import Switch from 'src/components/input/Switch';
 import NativeSelect from 'src/components/input/NativeSelect';
+import MultiSelect from 'src/components/input/MultiSelect';
 import Select from 'src/components/input/Select';
 import Textarea from 'src/components/input/Textarea';
 import TextInput from 'src/components/input/TextInput';
@@ -37,6 +38,7 @@ const App = ({ className }) => {
     const [text, setText] = useState('');
     const [progressValue, setProgressValue] = useState(30);
     const [textareaValue, setTextareaValue] = useState('');
+    const [multiSelectValue, setMultiSelectValue] = useState([]);
     const [selectValue, setSelectValue] = useState('');
     const [switchValue, setSwitchValue] = useState(false);
     const [checkValue, setCheckValue] = useState(true);
@@ -518,6 +520,42 @@ const App = ({ className }) => {
                         error
                         value={selectValue}
                         onChange={(val) => { setSelectValue(val); }}
+                        options={[
+                            { label: 'Option A', value: 'a' },
+                            { label: 'Option B', value: 'b' },
+                            { label: 'Option C', value: 'c' },
+                            { label: 'Option D', value: 'd' },
+                        ]}
+                    />
+                </Container>
+
+                <Text fontSize={FONT_SIZE.l}>MultiSelect</Text>
+                <Container hGap={SPACING.m} margin={`0 0 ${SPACING.l}`}>
+                    <MultiSelect
+                        value={multiSelectValue}
+                        onChange={(val) => { setMultiSelectValue(val); }}
+                        options={[
+                            { label: 'Option A', value: 'a' },
+                            { label: 'Option B', value: 'b' },
+                            { label: 'Option C', value: 'c' },
+                            { label: 'Option D', value: 'd' },
+                        ]}
+                    />
+                    <MultiSelect
+                        disabled
+                        value={multiSelectValue}
+                        onChange={(val) => { setMultiSelectValue(val); }}
+                        options={[
+                            { label: 'Option A', value: 'a' },
+                            { label: 'Option B', value: 'b' },
+                            { label: 'Option C', value: 'c' },
+                            { label: 'Option D', value: 'd' },
+                        ]}
+                    />
+                    <MultiSelect
+                        error
+                        value={multiSelectValue}
+                        onChange={(val) => { setMultiSelectValue(val); }}
                         options={[
                             { label: 'Option A', value: 'a' },
                             { label: 'Option B', value: 'b' },

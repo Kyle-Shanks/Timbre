@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import Box from 'src/components/layout/Box';
 import Icon from 'src/components/typography/Icon';
 import Text from 'src/components/typography/Text';
-import { SPACING, FONT_WEIGHT } from 'src/styles/constants';
+import { SPACING, FONT_WEIGHT, borderRadiusM } from 'src/styles/constants';
 import { relaBlock, absCenter } from 'src/styles/util';
 
 export const StyledComponent = styled(Box)`
     ${relaBlock}
-    padding: ${SPACING.m} ${SPACING.l} ${SPACING.m} ${SPACING.xl};
+    padding: ${SPACING.sm} ${SPACING.l} ${SPACING.sm} ${SPACING.xl};
+    border-radius: ${borderRadiusM};
     background-color: ${({ theme, type }) => theme[type]}30;
     color: ${({ theme }) => theme.textPrimary};
 `;

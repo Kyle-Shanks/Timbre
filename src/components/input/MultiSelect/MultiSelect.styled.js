@@ -6,7 +6,7 @@ import { SPACING, borderWidth, borderRadiusM } from 'src/styles/constants';
 
 export const StyledComponent = styled(Box)`
     ${relaInline}
-    min-width: 16rem;
+    width: 16rem;
     padding: ${SPACING.s} ${SPACING.l} ${SPACING.s} ${SPACING.m};
     background-color: transparent;
     border: ${({ theme, disabled, error }) => {

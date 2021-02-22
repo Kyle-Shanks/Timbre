@@ -4,7 +4,7 @@ import { relaInline } from 'src/styles/util';
 import { SPACING, defaultCheckboxSize } from 'src/styles/constants';
 
 const getSvgFill = ({ theme, checked, disabled }) => {
-    if (!checked) return theme.background;
+    if (!checked) return 'transparent';
     return disabled ? theme.textDisabled : theme.textPrimary;
 };
 
@@ -20,7 +20,7 @@ export const CheckboxSvg = styled(Box)`
     width: ${defaultCheckboxSize};
     margin-right: ${SPACING.xs};
     fill: none;
-    stroke: ${({ theme }) => theme.background};
+    stroke: ${({ theme, checked }) => checked ? theme.background : 'transparent'};
     stroke-width: 5;
     stroke-linecap: round;
     transition: 0s;
